@@ -1,0 +1,27 @@
+page-get-started {
+
+    .sk-get-started-page {
+        //background-image: url("../assets/img/custom-images/index@2x.jpg");
+        background-image: url("../assets/img/custom-images/bg_get_started.png");
+        background-size: cover;
+        background-position: center;
+        margin: auto;
+        z-index: 2;
+    }
+
+
+    .sk-logo{
+        width: 68%;
+        position: absolute;
+        left: 16%;
+        top: 10%;
+    }
+
+    .sk-btn-get-started{
+      width: 80%;
+      bottom: 6%;
+      position: absolute;
+      left: 10%;
+    }
+
+}

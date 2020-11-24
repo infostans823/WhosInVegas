@@ -1,0 +1,403 @@
+
+<ion-toolbar class="sk-toolbar-bg-profile11">
+</ion-toolbar>
+
+<iframe class="sk-iframe" src="https://whosinvegas.com/rits_ads.php" width="320" height="50" scrolling="no" marginheight="0"
+marginwidth="0" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen"
+msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
+webkitallowfullscreen="webkitallowfullscreen" data-gtm-yt-inspected-1_27="true">
+</iframe>
+
+<div class="sk-profile-tab sk-navigation-tab sk-height-wrap">
+
+        <!-- <img class="sk-bg-profile" src="assets/img/custom-images/profile_bg.png"> -->
+
+        <!-- <ion-toolbar style="margin-top: 2%">
+            <div class="sk-header-left">
+                <img class="sk-header-profile" src="assets/img/custom-images/profile_icon_user_fill.png">
+                <img class="sk-header-matches" src="assets/img/custom-images/profile_icon_heart_empty.png">
+            </div>
+                <ion-title style="display: inline-block">
+                        My Profile
+                </ion-title>
+                <div class="sk-header-right">
+                    <img class="sk-header-menu" src="assets/img/custom-images/profile_icon_menu.png">
+                </div>
+        </ion-toolbar> -->
+
+
+    <!-- page skeleton -->
+    <skeleton-preloader *ngIf="isDashboardLoading" name="profile-tab"></skeleton-preloader>
+    
+    <!-- my profile wrapper -->
+    <ion-scroll *ngIf="!isDashboardLoading" scrollY="true" class="sk-height-wrap">
+
+        
+        <img class="sk-bg-profile" src="assets/img/custom-images/profile_bg.png">
+        <img [navPush]="profileEditPage" class="sk-edit-profile" src="assets/img/custom-images/edit_profile.png">
+        <div *ngIf="my$ | async as my" class="sk-user">
+            <!-- user avatar -->
+            <div class="sk-user-avatar">
+                <div class="sk-user-avatar-img">
+                    <user-avatar (tap)="showProfile()" isUseBigAvatar="false" [url]="my.avatar?.pendingUrl"></user-avatar>
+                    <div *ngIf="my.avatar?.id && !my.avatar?.active" class="sk-photo-pending" (tap)="showProfile()">
+                        <img src="./assets/img/ic-pending.svg" alt="" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- user info -->
+            <div class="sk-user-info">
+                <img *ngIf="my.user.isInVegas" class="sk-online-invegas" src="./assets/img/custom-images/criste.png"/>
+                <img *ngIf="my.user.isOnline" class="sk-online-invegas" src="./assets/img/custom-images/green_dot.png"/>
+                <span class="sk-name">
+                    {{ my.user.userName }}
+                </span>
+                <!-- <span class="sk-about">
+                    {{ my.user.aboutMe }}
+                </span> -->
+            </div>
+
+            <div class="sk-user-avatar-buttons">
+                <!-- user settings -->
+                <!-- <button  class="sk-user-profile" ion-button [navPush]="profileEditPage">
+                    <span class="sk-text-overflow">{{ 'profile_edit_profile' | translate }}</span>
+                </button>
+                <button class="sk-settings-button" ion-button [navPush]="appSettingsPage">
+                    <span class="sk-text-overflow">{{ 'profile_app_settings' | translate }}</span>
+                </button> -->
+            </div>
+
+            <!-- installation guide -->
+            <!-- <button *ngIf="isInstallationGuideAllowed" class="sk-user-link-pwa-guide" ion-button clear (click)="showInstallationGuide()">
+                {{ 'pwa_installation_guide' | translate }}
+            </button>
+       
+            <div class="sk-user-links">
+               
+                <button *ngIf="siteConfigs.isPluginActive('ocsguests')" ion-button clear [navPush]="guestsPage">
+                    {{ 'profile_my_guests' | translate }}
+                    <span *ngIf="newGuestsCount$ | async as newGuestsCount" class="sk-guest-count">
+                        <span *ngIf="newGuestsCount <= 99">
+                            {{ newGuestsCount }}
+                        </span>
+                        <span *ngIf="newGuestsCount > 99">99+</span>
+                    </span>
+                </button>
+
+                <button *ngIf="siteConfigs.isPluginActive('bookmarks')" class="sk-bookmark-button" ion-button clear [navPush]="bookmarksPage">
+                    {{ 'profile_bookmarks' | translate }}
+                </button>
+
+                <button *ngIf="siteConfigs.isPluginActive('matchmaking')" ion-button clear [navPush]="compatibleUsersPage">
+                    {{ 'profile_compatible_users' | translate }}
+                </button>
+
+       
+                <button *ngIf="payments.isPaymentsAvailable()" ion-button clear [navPush]="initialPaymentsPage">
+                    {{ 'profile_buy_upgrades' | translate }}
+                </button>
+
+                 <button ion-button clear [navPush]="appSettingsPage">
+                    {{ 'profile_app_settings' | translate }}
+                </button>
+            </div> -->
+            <!------------------------------------------------>
+            <div *ngFor="let item of itemLocation">
+                <button  ion-item class="desc_txt_set" detail-none (click)="expandItem(item,itemLocation)"  >
+                    <!-- <ion-thumbnail item-start col-3> -->
+                    <ion-row>
+                        <!-- <ion-col col-5>
+                            <img style="width: 80%;" class="img_set_pos" src="assets/img/custom-images/seeinvagas.png">
+                        </ion-col> -->
+
+                        <ion-col style="max-width: 70%" col-6>
+                            <!-- <ion-item no-lines> -->
+                            <img style="width: 80%;" class="img_set_pos" src="assets/img/custom-images/seeinvagas.png">
+                            <!-- </ion-thumbnail> -->
+                        </ion-col>
+
+                        <ion-col col-2>
+                            <!-- <h2 style="font-weight: bolder">Locator</h2> -->
+                            <!-- <p>Hayao Miyazaki • 1988</p> -->
+                        </ion-col>
+
+                        <ion-col col-4>
+                            <button style="height: auto; left:48%; width: 66%;margin-top: 25%;" ion-button clear item-end>
+                                <img *ngIf="!item.expanded" style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/close.png">
+                                <img *ngIf="item.expanded" style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/closeUp.png">
+                            </button>
+                        </ion-col>
+                    </ion-row>
+                </button>
+
+                <expandable [class]="classVariable"  [expandHeight]="itemExpandHeight" [expanded]="item.expanded" sizeElement="%">
+
+                    <p  class="sk-title-message"  *ngIf="item.expanded"> Do you want to let singles know you are in Vegas
+                        and ready to hang out? Click below to make it happen! </p>
+
+                    <button  *ngIf="item.expanded" (click)="enablePermission()" style="background: #54C6D0" class="btn_size_cls" ion-button>{{GPSLabel}}</button>
+                    <button  *ngIf="item.expanded" (click)="popupDisableGps()" style="background: lightgray" class="btn_size_cls" ion-button>Disable GPS</button>
+
+                    <img *ngIf="isAnableGPS" style="max-width: 92%; margin-top: 3%;" src="assets/img/custom-images/anable_gps.png">
+                </expandable>
+            </div>
+
+            <img style="height: 2px;" src="assets/img/custom-images/line.png">
+
+            <div *ngFor="let item of itemMyLikes">
+            <button  ion-item class="desc_txt_set" detail-none (click)="expandItem(item,itemMyLikes)">
+                    <!-- <ion-thumbnail item-start col-3> -->
+                    <ion-row>
+                        <ion-col style="max-width: 10%" col-2>
+                            <!-- <ion-item no-lines> -->
+                            <img style="width: 80%;" class="img_set_pos" src="assets/img/custom-images/likes.png">
+                            <!-- </ion-thumbnail> -->
+                        </ion-col>
+
+                        <ion-col col-7>
+                            <h2 style="font-weight: bolder">My Likes</h2>
+                            <!-- <p>Hayao Miyazaki • 1988</p> -->
+                        </ion-col>
+                        <ion-col col-3>
+                            <button style="height: auto; left:60%; width: 90%" ion-button clear item-end>
+                                <img style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/close.png">
+                                <!-- <img *ngIf="item.expanded" style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/closeUp.png"> -->
+                            </button>
+                        </ion-col>
+                    </ion-row>
+                </button>
+                <expandable class="expnd-set-cls" style="white-space:normal;" sizeElement="px" [expandHeight]="itemExpandHeightNew" [expanded]="item.expanded">
+
+                    <p  class="sk-title-message"  *ngIf="item.expanded">People you’ve liked from search results.</p>
+
+                    <ion-scroll style="text-align: left;" *ngIf="hasMyLikeList" class="scroll-hori-proView" scrollX="true" direction="x">
+                        <div class="card-hori-proView" *ngFor="let cardRes of mMyLikeList">
+                            <div (tap)="viewProfile(cardRes.userId)">
+                                <img class="card-img-res" [src]="cardRes.avatar?.url">
+                                <ion-card-content style="text-align: center;">
+                                    <ion-card-title class="card-title-size">
+                                    <b>{{cardRes.displayName}}</b>
+                                    </ion-card-title>
+                            
+                                    <div style="margin: 2% 0%;">
+                                    <img class="dis-heading-img" src="assets/img/custom-images/loc.png">
+                                    <span class="dis-heading-txt">Location Disabled</span>
+                                    </div>
+                                </ion-card-content>
+                            </div>
+                        </div>
+                      </ion-scroll>
+                      <img *ngIf="hasMyLikeList" [navPush]="likesPage" style="max-width: 92%; margin-top: 3%;" src="assets/img/custom-images/view_all.png">
+
+                      <img *ngIf="!hasMyLikeList" style="margin-top: 2rem;" src="assets/img/ic-not-found.svg">
+                      <h2 *ngIf="!hasMyLikeList" style="color: gray;">{{ 'empty_user_search_header' | translate }}</h2>
+                      
+                </expandable>
+            </div>
+
+                <img style="height: 2px;" src="assets/img/custom-images/line.png">
+
+                <div *ngFor="let item of itemBookmarks">
+                    <button  ion-item class="desc_txt_set" detail-none (click)="expandItem(item,itemBookmarks)">
+                            <!-- <ion-thumbnail item-start col-3> -->
+                            <ion-row>
+                                <ion-col style="max-width: 10%" col-2>
+                                    <!-- <ion-item no-lines> -->
+                                    <img style="width: 80%;" class="img_set_pos" src="assets/img/custom-images/bookmarks.png">
+                                    <!-- </ion-thumbnail> -->
+                                </ion-col>
+        
+                                <ion-col col-7>
+                                    <h2 style="font-weight: bolder">My Bookmarks</h2>
+                                    <!-- <p>Hayao Miyazaki • 1988</p> -->
+                                </ion-col>
+                                <ion-col col-3>
+                                    <button style="height: auto; left:60%; width: 90%" ion-button clear item-end>
+                                        <img style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/close.png">
+                                        <!-- <img *ngIf="item.expanded" style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/closeUp.png"> -->
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+                        </button>
+                        <expandable  style="white-space:normal;" sizeElement="px" [expandHeight]="itemExpandHeightNew" [expanded]="item.expanded">
+        
+                            <p  class="sk-title-message"  *ngIf="item.expanded">People you’ve saved to view or interact with later.</p>
+        
+                            <ion-scroll style="text-align: left;" *ngIf="hasBookmarkList" class="scroll-hori-proView" scrollX="true" direction="x">
+                                <div class="card-hori-proView" *ngFor="let cardRes of mBookmarkList">
+                                    <div (tap)="viewProfile(cardRes.user?.id)">
+                                        <img class="card-img-res" [src]="cardRes.avatar?.bigUrl">
+                                        <ion-card-content style="text-align: center;">
+                                            <ion-card-title class="card-title-size">
+                                            <b>{{cardRes.user?.userName}} {{cardRes.user?.age}}</b>
+                                            </ion-card-title>
+                                    
+                                            <div style="margin: 2% 0%;">
+                                            <img class="dis-heading-img" src="assets/img/custom-images/loc.png">
+                                            <span *ngIf="cardRes.user?.distance" class="dis-heading-txt">{{cardRes.user?.distanc}}</span>
+                                            <span *ngIf="!cardRes.user?.distance" class="dis-heading-txt">Location Disabled</span>
+                                            </div>
+                                    
+                                        </ion-card-content>
+                                    </div>
+                                </div>
+                              </ion-scroll>
+                            <img *ngIf="hasBookmarkList" [navPush]="bookmarksPage" style="max-width: 92%; margin-top: 3%;" src="assets/img/custom-images/view_all.png">
+                        
+                            <img *ngIf="!hasBookmarkList" style="margin-top: 2rem;" src="assets/img/ic-not-found.svg">
+                            <h2 *ngIf="!hasBookmarkList" style="color: gray;">{{ 'empty_user_search_header' | translate }}</h2>
+                        
+                        </expandable>
+                    </div>
+
+                    <img style="height: 2px;" src="assets/img/custom-images/line.png">
+                   
+                    <div *ngFor="let item of itemMyGuests">
+                        <button  ion-item class="desc_txt_set" detail-none (click)="expandItem(item,itemMyGuests)">
+                                <!-- <ion-thumbnail item-start col-3> -->
+                                <ion-row>
+                                    <ion-col style="max-width: 10%" col-2>
+                                        <!-- <ion-item no-lines> -->
+                                        <img style="width: 80%;" class="img_set_pos" src="assets/img/custom-images/guests.png">
+                                        <!-- </ion-thumbnail> -->
+                                    </ion-col>
+            
+                                    <ion-col col-7>
+                                        <h2 style="font-weight: bolder">My Guests</h2>
+                                        <!-- <p>Hayao Miyazaki • 1988</p> -->
+                                    </ion-col>
+                                    <ion-col col-3>
+                                        <button style="height: auto; left:60%; width: 90%" ion-button clear item-end>
+                                            <img style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/close.png">
+                                            <!-- <img *ngIf="item.expanded" style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/closeUp.png"> -->
+                                        </button>
+                                    </ion-col>
+                                </ion-row>
+                            </button>
+                            <expandable  style="white-space:normal;" sizeElement="px" [expandHeight]="itemExpandHeightNew" [expanded]="item.expanded">
+            
+                                <p  class="sk-title-message"  *ngIf="item.expanded">See who has viewed your profile recently.</p>
+            
+                                <ion-scroll style="text-align: left;" *ngIf="hasMyGuestList" class="scroll-hori-proView" scrollX="true" direction="x">
+                                    <div class="card-hori-proView" *ngFor="let cardRes of mMyGuestList">
+                                        <div (tap)="viewProfile(cardRes.user?.id)">
+                                            <img class="card-img-res" [src]="cardRes.avatar?.bigUrl">
+                                            <ion-card-content style="text-align: center;">
+                                              <ion-card-title class="card-title-size">
+                                                <b>{{cardRes.user?.userName}} {{cardRes.user?.age}}</b>
+                                              </ion-card-title>
+                                      
+                                              <div style="margin: 2% 0%;">
+                                                <img class="dis-heading-img" src="assets/img/custom-images/loc.png">
+                                                <span *ngIf="cardRes.user?.distance" class="dis-heading-txt">{{cardRes.user?.distanc}}</span>
+                                                <span *ngIf="!cardRes.user?.distance" class="dis-heading-txt">Location Disabled</span>
+                                              </div>
+                                      
+                                            </ion-card-content>
+                                        </div>
+                                    </div>
+                                  </ion-scroll>
+                                <img *ngIf="hasMyGuestList" [navPush]="guestsPage" style="max-width: 92%; margin-top: 3%;" src="assets/img/custom-images/view_all.png">
+                            
+                                <img *ngIf="!hasMyGuestList" style="margin-top: 2rem;" src="assets/img/ic-not-found.svg">
+                                <h2 *ngIf="!hasMyGuestList" style="color: gray;">{{ 'empty_user_search_header' | translate }}</h2>
+
+                            </expandable>
+                        </div>
+                        
+                        <img style="height: 2px;" src="assets/img/custom-images/line.png">
+                        
+                        <div *ngFor="let item of itemMatches">
+                            <button  ion-item class="desc_txt_set" detail-none (click)="expandItem(item,itemMatches)">
+                                    <!-- <ion-thumbnail item-start col-3> -->
+                                    <ion-row>
+                                        <ion-col style="max-width: 10%" col-2>
+                                            <!-- <ion-item no-lines> -->
+                                            <img style="width: 80%;" class="img_set_pos" src="assets/img/custom-images/matches.png">
+                                            <!-- </ion-thumbnail> -->
+                                        </ion-col>
+                
+                                        <ion-col col-7>
+                                            <h2 style="font-weight: bolder">My Matches</h2>
+                                            <!-- <p>Hayao Miyazaki • 1988</p> -->
+                                        </ion-col>
+                                        <ion-col col-3>
+                                            <button style="height: auto; left:60%; width: 90%" ion-button clear item-end>
+                                                <img style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/close.png">
+                                                <!-- <img *ngIf="item.expanded" style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/closeUp.png"> -->
+                                            </button>
+                                        </ion-col>
+                                    </ion-row>
+                                </button>
+                                <expandable  style="white-space:normal;" sizeElement="px" [expandHeight]="itemExpandHeightNew" [expanded]="item.expanded">
+                
+                                    <p  class="sk-title-message"  *ngIf="item.expanded">Browse potential matches based on your preferences.</p>
+            
+                                    <ion-scroll style="text-align: left;" *ngIf="hasMyMatchList" class="scroll-hori-proView" scrollX="true" direction="x">
+                                        <div class="card-hori-proView" *ngFor="let cardRes of mMyMatchList">
+                                            <div (tap)="viewProfile(cardRes.user?.id)">
+                                                <img class="card-img-res" [src]="cardRes.avatar?.bigUrl">
+                                                <ion-card-content style="text-align: center;">
+                                                  <ion-card-title class="card-title-size">
+                                                    <b>{{cardRes.user?.userName}} {{cardRes.user?.age}}</b>
+                                                  </ion-card-title>
+                                          
+                                                  <div style="margin: 2% 0%;">
+                                                    <img class="dis-heading-img" src="assets/img/custom-images/loc.png">
+                                                    <span *ngIf="cardRes.user?.distance" class="dis-heading-txt">{{cardRes.user?.distanc}}</span>
+                                                    <span *ngIf="!cardRes.user?.distance" class="dis-heading-txt">Location Disabled</span>
+                                                  </div>
+                                          
+                                                </ion-card-content>
+                                            </div>
+                                        </div>
+                                      </ion-scroll>
+                                    <img *ngIf="hasMyMatchList" [navPush]="compatibleUsersPage" style="max-width: 92%; margin-top: 3%;" src="assets/img/custom-images/view_all.png">
+                                
+                                    <img *ngIf="!hasMyMatchList" style="margin-top: 2rem;" src="assets/img/ic-not-found.svg">
+                                    <h2 *ngIf="!hasMyMatchList" style="color: gray;">{{ 'empty_user_search_header' | translate }}</h2>
+
+                                </expandable>
+                            </div>
+                        
+                            <img style="height: 2px;" src="assets/img/custom-images/line.png">
+                        
+                            <div *ngFor="let item of itemSafety">
+                                <button  ion-item class="desc_txt_set" detail-none (click)="expandItem(item,itemSafety)">
+                                        <!-- <ion-thumbnail item-start col-3> -->
+                                        <ion-row>
+                                            <ion-col style="max-width: 10%" col-2>
+                                                <!-- <ion-item no-lines> -->
+                                                <img style="width: 80%;" class="img_set_pos" src="assets/img/custom-images/safety.png">
+                                                <!-- </ion-thumbnail> -->
+                                            </ion-col>
+                    
+                                            <ion-col col-7>
+                                                <h2 style="font-weight: bolder">Safety & Security Info</h2>
+                                                <!-- <p>Hayao Miyazaki • 1988</p> -->
+                                            </ion-col>
+                                            <ion-col col-3>
+                                                <button style="height: auto; left:60%; width: 90%" ion-button clear item-end>
+                                                    <img style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/close.png">
+                                                    <!-- <img *ngIf="item.expanded" style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/closeUp.png"> -->
+                                                </button>
+                                            </ion-col>
+                                        </ion-row>
+                                    </button>
+                                    <expandable  style="white-space:normal;" sizeElement="px" [expandHeight]="itemExpandHeightSaafety" [expanded]="item.expanded">
+                    
+                                        <p  class="sk-title-message"  *ngIf="item.expanded">Your profile is secured and under your control.<br><br>
+
+                                            Our Las Vegas locator allows you to let potential matches know you’re in Las Vegas, Nevada. 
+                                            It’s totally up to you when you want to be shown on our site as being in Vegas - simply turn your GPS locator on or off at any time. We indicate users who are in Vegas using the red star icon.<br><br>
+                                            
+                                            For privacy/legal reasons, we have to ask you for permission to use your location, but you always have full control of this.</p>
+                    
+                                    </expandable>
+                                </div>
+
+                                <img style="height: 2px;" src="assets/img/custom-images/line.png">
+        </div>
+    </ion-scroll>
+</div>

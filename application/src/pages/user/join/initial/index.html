@@ -1,0 +1,82 @@
+
+    
+<img *ngIf="!isAvatarUploadIng && !avatarUrl" class="sk-add-photo" (click)="fileUploader.showFileChooser()" src="assets/img/custom-images/add_photo.png">
+
+        <div class="sk-question-list-wrap">
+                <div *ngIf="!isAvatarHidden" class="sk-avatar-wrapper" (click)="fileUploader.showFileChooser()">
+                        <div *ngIf="avatarUrl || isAvatarUploadIng" class="sk-add-avatar" [style.background-image]="'url(' + avatarUrl + ')'">
+                                <img class="sk-edit-photo" *ngIf="avatarUrl" src="assets/img/custom-images/edit_image.png">
+                            <ion-spinner *ngIf="isAvatarUploadIng" name="ios-small"></ion-spinner>
+                        </div>
+                    </div>
+        </div>
+
+        <!-- <img class="sk-add-photo" (click)="fileUploader.showFileChooser()" src="assets/img/custom-images/add_photo.png">
+
+        <div class="sk-question-list-wrap">
+                <div class="sk-avatar-wrapper">
+                        <div  class="sk-add-avatar" [style.background-image]="'url(assets/img/custom-images/couple1.jpg)'">
+                            <img class="sk-edit-photo" (click)="fileUploader.showFileChooser()" src="assets/img/custom-images/edit_image.png">
+                        </div>
+                    </div>
+        </div> -->
+
+<file-uploader
+                    class="sk-avatar-uploader"
+                    #fileUploader
+                    [uri]="avatarUploadUri"
+                    isBroadcastError="false"
+                    acceptMask="image/*"
+                    [mimeTypes]="getAvatarMimeTypes"
+                    [maxFileSize]="getAvatarMaxSize"
+                    (startUploading)="startUploadingAvatarCallback($event)"
+                    (uploaded)="successAvatarUploadCallback($event)"
+                    (uploadError)="errorAvatarUploadCallback($event)">
+                </file-uploader>
+
+<ion-content class="sk-join-initial-page">
+
+        <ion-navbar></ion-navbar>
+
+        <img class="sk-bg-signup" src="assets/img/custom-images/join_header.png">
+
+        <div class="header-join">
+            <div style="padding-top: 6rem; padding-left: 3rem;">
+                    <div class="no">1</div>
+                    <div  class="text-parent">
+                        <div class="text">Set up your </div>
+                        <div class="text">profile</div>
+                    </div>
+            </div>
+        </div>
+    
+        <div class="sk-login-page-cont">
+    
+        <form *ngIf="!isPageLoading" [formGroup]="form">
+                <ion-list class="sk-inputs" no-lines >
+                       
+                <div *ngFor="let sectionData of sections" class="sk-question-list">
+                        <!-- questions dividers -->
+                        <ion-item-divider *ngIf="sectionData.section" text-wrap class="sk-question-section" color="light">
+                            <span style="font-weight: bolder; font-size: 2rem;">{{ sectionData.section }}</span>
+                        </ion-item-divider>
+    
+                        <!-- questions -->
+                        <question *ngFor="let question of sectionData.questions" class="sk-question-item" [question]="question" [form]="form"></question>
+                    </div>
+
+                    <!-- <button ion-button block class="sk-btn-finish" (click)="submit()">
+                            <span class="sk-text-overflow">FINISH</span>
+                            <ion-spinner *ngIf="loginInProcessing" class="sk-spinner-btn" name="ios-small"></ion-spinner>
+                        </button> -->
+
+                        <div style="margin-top: 10%;" (click)="submit()">
+                            <img menuClose src="assets/img/custom-images/finish.png">
+                            <ion-spinner *ngIf="loginInProcessing" style="position: absolute; right:22%; margin-top:5.5%;" class="sk-spinner-btn" name="ios-small"></ion-spinner>
+                        </div>
+                </ion-list>
+            </form>
+            <img style="margin-top: -2rem" *ngIf="!isPageLoading" src="assets/img/custom-images/signup_buttom.png">
+    </div>
+    
+    </ion-content>

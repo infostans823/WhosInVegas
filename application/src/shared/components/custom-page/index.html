@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{ title }}</ion-title>
+        <ion-buttons end>
+            <button class="sk-custompage-close" ion-button clear (click)="close()">
+                {{ 'close' | translate }}
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div [innerHTML]="pageName | translate | trustHtml"></div>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <iframe class="sk-iframe" src="https://whosinvegas.com/rits_ads.php" width="320" height="50" scrolling="no" marginheight="0"
+        marginwidth="0" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen"
+        msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
+        webkitallowfullscreen="webkitallowfullscreen" data-gtm-yt-inspected-1_27="true">
+    </iframe>
+    </ion-toolbar>
+</ion-footer>

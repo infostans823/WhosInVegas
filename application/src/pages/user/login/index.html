@@ -1,0 +1,87 @@
+<ion-content [attr.page-blocker]="isFacebookInProcess ? 'true' : ''" class="{{ isLogin ? 'sk-login-page' : 'sk-signup-page' }}">
+    <div class="{{ isLogin ? 'header-login' : 'header-signup' }}">
+        <img class="sk-logo" src="assets/img/custom-images/logo.png">
+    </div>
+
+    <!-- <img *ngIf="isLogin" class="sk-bg-login" src="assets/img/custom-images/login_half_cut.png">
+
+    <img *ngIf="!isLogin" class="sk-bg-signup" src="assets/img/custom-images/signup_half_cut.png"> -->
+
+    <div class="{{ isLogin ? 'sk-bg-login' : 'sk-bg-signup' }}">
+
+        <ion-segment class="center" mode="md" scrollable>
+            <ion-segment-button (click)="Login()" class="custom-tab1">
+                <ion-label>Login</ion-label>
+            </ion-segment-button>
+            <ion-segment-button (click)="Signup()" class="custom-tab2">
+                <ion-label>Register</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+
+        <div class="devider"></div>
+
+        <div class="sk-login-page-cont">
+
+            <form [formGroup]="form">
+                <ion-list class="sk-inputs" no-lines>
+                    <question *ngFor="let question of questions" [question]="question" [form]="form"></question>
+                </ion-list>
+                <div class="sk-buttons">
+                    <!-- <div *ngIf="isLogin" class="sk-buttons-inline">
+                        <button style="font-weight: normal;" type="button" ion-button clear [navPush]="forgotPasswordPage" class="sk-fpass">
+                            <span class="sk-text-overflow">
+                                {{ 'forgot_password' | translate }}
+                            </span>
+                        </button>
+                    </div>
+                    <div *ngIf="isLogin">
+                        <button type="submit" ion-button block class="btn-facebook" (click)="facebookLogin()">
+                            <span class="sk-text-overflow">Log in with Facebook</span>
+                        </button>
+                        <button type="submit" ion-button block [disabled]="loginInProcessing || !form.valid" class="sk-login" (click)="login()">
+                            <span class="sk-text-overflow">LOG IN</span>
+                            <ion-spinner *ngIf="loginInProcessing" class="sk-spinner-btn" name="ios-small"></ion-spinner>
+                        </button>
+                    </div> -->
+                    <div style="margin-top: 1rem;" *ngIf="isLogin">
+                        <button type="submit" ion-button block [disabled]="loginInProcessing || !form.valid" class="sk-login" (click)="login()">
+                                    <span class="sk-text-overflow">LOGIN</span>
+                                    <ion-spinner *ngIf="loginInProcessing" class="sk-spinner-btn" name="ios-small"></ion-spinner>
+                                </button>
+                        <button type="submit" ion-button block class="btn-facebook" (click)="facebookLogin()">
+                            <span class="sk-text-overflow">Login with Facebook</span>
+                        </button>
+                        <div class="sk-buttons-inline">
+                            <button style="font-weight: normal;" type="button" [navPush]="forgotPasswordPage" ion-button clear class="sk-fpass"> 
+                                    <!-- [navPush]="firstLogin" -->
+                                    <span class="sk-text-overflow">
+                                        {{ 'forgot_password' | translate }}
+                                    </span>
+                                </button>
+                        </div>
+                    </div>
+
+                    <div class="botm-txt">
+                        <!-- <span> -->
+                            By selecting Login, Signup, or other login options, you agree to our <a (click)="termsAndUse()" >Terms of Use</a> and consent to our <a (click)="privcyPolicy()">Privacy Policy</a>.
+                        <!-- </span> -->
+                    </div>
+                    <div *ngIf="!isLogin">
+                        <button type="submit" ion-button block (click)="signup()" style="background-color: #DD6784">
+                                    <span class="sk-text-overflow">SIGN UP</span>
+                                    <ion-spinner *ngIf="loginInProcessing" class="sk-spinner-btn" name="ios-small"></ion-spinner>
+                                </button>
+                        <button type="submit" ion-button block class="btn-facebook" (click)="facebookLogin()">
+                            <span class="sk-text-overflow">Signup with Facebook</span>
+                            <!-- <ion-spinner *ngIf="loginInProcessing" class="sk-spinner-btn" name="ios-small"></ion-spinner> -->
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+</ion-content>

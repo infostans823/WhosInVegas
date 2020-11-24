@@ -1,0 +1,170 @@
+<!-- <ion-header>
+    <ion-navbar>
+        <ion-title>
+            {{ 'edit_user_page_header' | translate }}
+        </ion-title>
+        <ion-buttons end>
+            <button *ngIf="!isPageLoading" class="sk-edit-questions-button" ion-button clear [disabled]="questionControl.isFormPending(form) || isUserUpdating || isAvatarPending" (click)="submit()">
+                <ion-spinner *ngIf="isUserUpdating" name="ios-small"></ion-spinner>
+                <span *ngIf="!isUserUpdating">
+                    {{ 'done' | translate }}
+                </span>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header> -->
+
+<ion-content [attr.page-blocker]="isUserUpdating ? 'true' : ''" class="sk-user-edit-base sk-user-edit-page">
+    <!-- page skeleton -->
+    <skeleton-preloader *ngIf="isPageLoading" name="profile-edit"></skeleton-preloader>
+
+    <ion-navbar style="position: absolute;">
+        <ion-title class="sk-title">
+            {{ 'edit_user_page_header' | translate }}
+        </ion-title>
+        <ion-buttons end>
+            <button *ngIf="!isPageLoading" class="sk-edit-questions-button" ion-button clear [disabled]="questionControl.isFormPending(form) || isUserUpdating || isAvatarPending" (click)="submit()">
+                <ion-spinner *ngIf="isUserUpdating" name="ios-small"></ion-spinner>
+                <span *ngIf="!isUserUpdating">
+                    {{ 'done' | translate }}
+                </span>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+    <ion-toolbar style="position: absolute; top: 7%;">
+        <iframe class="sk-iframe" src="https://whosinvegas.com/rits_ads.php" width="320" height="50" scrolling="no" marginheight="0"
+            marginwidth="0" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen"
+            msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
+            webkitallowfullscreen="webkitallowfullscreen" data-gtm-yt-inspected-1_27="true">
+        </iframe>
+    </ion-toolbar>
+
+    <img style="margin-top: -8%;" src="assets/img/custom-images/bg_edit_profile.png">
+
+    <div class="sk-user-new" *ngIf="!isPageLoading">
+        <div class="sk-user-avatar-new">
+            <div class="sk-user-avatar-new-img">
+                <!-- <user-avatar (tap)="showProfile()" isUseBigAvatar="false" [url]="avatarUrl"></user-avatar>
+                <div *ngIf="my.avatar?.id && !my.avatar?.active" class="sk-photo-pending" (tap)="showProfile()">
+                        <img src="./assets/img/ic-pending.svg" alt="" />
+                    </div> -->
+                    <user-avatar isUseBigAvatar="false" [url]="avatarUrl"></user-avatar>
+                    <!-- <div *ngIf="my.id && !my.active" class="sk-photo-pending">
+                        <img src="./assets/img/ic-pending.svg" alt="" />
+                    </div> -->
+            </div>
+        </div>
+    </div>
+
+    <ion-segment style="margin-top: 9rem;" mode="md" scrollable>
+        <ion-segment-button style="width: 62%;" class="sk-tab-1">
+            <ion-label class="sk-tab-{{ mSelectedTab == 'Basic' ? 'select' : 'unselect' }}" (click)="selectedTabe('Basic')">Basic</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="sk-tab-2">
+            <ion-label class="sk-tab-{{ mSelectedTab == 'Appearance' ? 'select' : 'unselect' }}" (click)="selectedTabe('Appearance')">Appearance</ion-label>
+        </ion-segment-button>
+        <ion-segment-button>
+            <ion-label class="sk-tab-{{ mSelectedTab == 'Lifestyle' ? 'select' : 'unselect' }}" (click)="selectedTabe('Lifestyle')">Lifestyle</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <img style="height: 3px; margin-top: 1%;" src="assets/img/custom-images/line.png">
+
+      <div style="border-bottom: 1px solid #D8D8D8;" *ngIf="mSelectedTab == 'Basic' && !isPageLoading">
+        <div *ngFor="let item of itemPhotoGrid">
+            <button style="padding-left: 5% !important;"  ion-item class="desc_txt_set" detail-none (click)="expandItem(item,itemPhotoGrid)"  >
+                <!-- <ion-thumbnail item-start col-3> -->
+                <ion-row>
+                    <ion-col style="max-width: 10%" col-2>
+                        <!-- <ion-item no-lines> -->
+                        <img style="width: 80%; margin-top: 1rem;" class="img_set_pos" src="assets/img/custom-images/photos.png">
+                        <!-- </ion-thumbnail> -->
+                    </ion-col>
+
+                    <ion-col col-7>
+                        <h2 style="font-weight: bolder; margin: 1.2rem 0; color: black;">Photos</h2>
+                        <!-- <p>Hayao Miyazaki • 1988</p> -->
+                    </ion-col>
+                    <ion-col col-3>
+                        <button style="height: auto; left:71%; width: 90%" ion-button clear item-end>
+                            <img *ngIf="!item.expanded" style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/close.png">
+                            <img *ngIf="item.expanded" style="width: 50%;" class="img_set_pos" src="assets/img/custom-images/closeUp.png">
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </button>
+
+            <expandable  style="white-space:normal;" sizeElement="%" [expandHeight]="50" [expanded]="item.expanded">
+
+                    <ion-grid *ngIf="mSelectedTab == 'Basic' && !isPageLoading" style="margin-top: 0%;">
+                        <div class="{{ item.expanded ? 'sk-open5' : 'sk-close5' }}">
+                            <ion-row  *ngFor="let photoSections of generatedPhotoList; let row = index">
+                                <ion-col *ngFor="let photoData of photoSections; let col = index" class="sk-photo-grid-item" (tap)="tapPhoto(row, col)" (press)="pressPhoto(row, col)">
+                                    <user-image *ngIf="photoData.url" [url]="photoData.url" class="sk-photo-wrapper"></user-image>
+                    
+                                    <!-- photo is not active -->
+                                    <div *ngIf="!photoData.isActive" class="sk-photo-pending">
+                                        <img src="./assets/img/ic-pending.svg" alt="" />
+                                    </div>
+                    
+                                    <!-- photo is in pending -->
+                                    <div *ngIf="photoData.isPending" class="sk-photo-pending">
+                                        <img src="./assets/img/ic-pending.svg" alt="" />
+                                    </div>
+                    
+                                    <!-- avatar mask -->
+                                    <div *ngIf="photoData.type == 'avatar'" class="sk-avatar-mask"></div>
+                    
+                                    <!-- more -->
+                                    <ion-icon *ngIf="photoData.type == 'more'" class="sk-photo-actions" name="ios-more"></ion-icon>
+                                </ion-col>
+                            </ion-row>
+                        </div>
+                        <!-- class="{{ item.expanded ? 'sk-open5' : 'sk-close5' }}" -->
+                        </ion-grid>
+            </expandable>
+      </div>
+      </div>
+
+
+    <!-- photos -->
+
+    <!-- edit form -->
+    <form style="background-color: white;" *ngIf="!isPageLoading" [formGroup]="form">
+        <ion-list class="sk-edit-fields">
+            <div class="sk-question-list-wrap">
+                <!-- questions -->
+                <div style="margin-left: 6%; margin-right: 6%;" *ngFor="let sectionData of sections" class="sk-question-list">
+                    <div *ngIf="sectionData.section == mSelectedTab">
+                        <!-- <ion-item-divider *ngIf="sectionData.section" text-wrap class="sk-question-section" color="light">
+                            <span>{{ sectionData.section }}</span>
+                        </ion-item-divider> -->
+                        <question *ngFor="let question of sectionData.questions"  class="sk-question-item" [question]="question" [form]="form"></question>
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+    </form>
+
+    <!-- avatar uploader -->
+    <file-uploader class="sk-avatar-uploader" #avatarUploader
+        isValidateAndReturn="true"
+        acceptMask="image/*"
+        [mimeTypes]="getImageMimeTypes"
+        [maxFileSize]="getAvatarMaxSize"
+        (fileSelected)="startUploadingAvatar($event)">
+    </file-uploader>
+
+    <!-- photo uploader -->
+    <file-uploader class="sk-photo-uploader" #photoUploader
+        isValidateAndReturn="true"
+        acceptMask="image/*"
+        [mimeTypes]="getImageMimeTypes"
+        [maxFileSize]="photoMaxUploadSize"
+        (fileSelected)="startUploadingPhoto($event)">
+    </file-uploader>
+
+    <!-- permissions -->
+    <permissions #permissions></permissions>
+</ion-content>

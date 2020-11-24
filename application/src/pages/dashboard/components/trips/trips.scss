@@ -1,0 +1,52 @@
+trips {
+    .sk-trips{
+        background-color: #E8E9EB;
+        padding: 3.5% 5% 2% 5%;
+    }
+
+    ///////////////TABS CSS////////////////
+
+    .sk-tab-1{
+      max-width: 9rem;
+      padding-left: 4% !important;
+    }
+
+    .sk-tab-2{
+      max-width: 14%;
+    }
+
+    .segment-md .segment-button {
+      text-align: left;
+      border-color: white !important;
+      border-bottom-color: rgba(255, 255, 255, 1);
+    }
+
+    .label-md {
+       margin: 0 !important; 
+    }
+
+    .label-ios {
+      margin: 0 !important; 
+    }
+
+    .sk-tab-select{
+      color: black;
+      font-weight: bolder;
+      text-transform: none;
+      font-size: 1.8rem;
+    }
+
+    .sk-tab-unselect{
+      color: grey;
+      font-weight: bolder;
+      text-transform: none;
+      font-size: 1.8rem;
+    }
+
+    ion-segment{
+      margin-top: 2%;
+      margin-bottom: -4%;
+    }
+
+    ////////////////////////////////////////
+}

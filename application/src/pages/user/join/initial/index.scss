@@ -1,0 +1,629 @@
+join-initial {
+    .sk-question-error,
+    .sk-base-question-presentation .sk-question-pending {
+        top: 75% !important;
+    }
+    .item-md {
+        padding-left: 0;
+    }
+    .range {
+        padding: 0 18px 0px 10px !important;
+    }
+    .sk-base-question-presentation .sk-select-question-presentation .input-wrapper:after {
+        top: 16px !important;
+        right: 10px !important;
+    }
+    .item-input ion-input,
+    .item-input ion-textarea {
+        position: static;
+        background-color: rgba(255, 255, 255, 0.4);
+        padding: 1% 4%;
+        border-radius: 2px;
+        margin-top: 2%;
+        font-family: "assets/fonts/segoeui.ttf";
+    }
+    .select {
+        max-width: 98%;
+        height: 42px;
+        color: #5B348D;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin: 2% 0% !important;
+        padding: 3% 0% 0% 3% !important;
+        border-radius: 2px !important;
+    }
+    .sk-base-question-presentation .sk-date-question-presentation .datetime {
+        color: #5B348D;
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-top: 2%;
+        background-color: rgba(255, 255, 255, 0.4);
+        padding: 4% 3%;
+        width: 100%;
+        font-family: 'segoeui';
+    }
+    /////////////////////////////////////////
+    .sk-edit-photo {
+        width: 4.2rem;
+        position: absolute;
+        top: 3.4rem;
+        left: -1.6rem;
+    }
+    .sk-add-avatar {
+        //  width: 30vh;
+        //  height: 30vh;
+        //  min-height: 196px;
+        //  min-width: 196px;
+        z-index: 2;
+        position: absolute;
+        top: -7.5rem;
+        right: -1.5rem;
+        width: 15.2rem !important;
+        height: 15.4rem !important;
+        border-bottom-left-radius: 94px !important;
+        border-bottom-right-radius: 80px !important;
+        border-top-left-radius: 80px !important;
+        //    width: 21vh !important;
+        //    height: 21vh !important;
+        //    min-height: 132px !important;
+        //    min-width: 132px !important;
+        //    border-bottom-left-radius: 100% !important;
+        //    border-bottom-right-radius: 90% !important;
+        //    border-top-left-radius: 90% !important;
+        @include flex(flex, column, center, center);
+        border: 2px solid $sk-join-initial-avatar;
+        border-radius: 10px;
+        color: $sk-join-initial-avatar;
+        font-size: 2rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        @include margin(6rem auto 4rem auto);
+        ion-label {
+            flex: none;
+        }
+        .icon {
+            @include margin(null 1.5rem null null);
+            font-size: 4.2rem;
+        }
+    }
+    .back-button-text {
+        margin-left: 5%;
+    }
+    .toolbar-background-ios {
+        background: transparent;
+    }
+    .button-inner {
+        color: white;
+    }
+    //////////////////////////////////////////////////////////////////
+    .datetime {
+        color: #3f3187 !important;
+        font-weight: bolder !important;
+        font-size: 1.6rem !important;
+    }
+    .text-input-md {
+        color: #3f3187 !important;
+        font-weight: 800;
+        font-size: 1.6rem;
+        font-family: 'segoeui'
+    }
+    .text-input-ios {
+        color: #3f3187 !important;
+        font-size: 1.6rem !important;
+        font-weight: 800 !important;
+        font-family: 'segoeui' !important;
+    }
+    .range-bar-active {
+        background-color: #FFFFFF !important;
+    }
+    .range-knob {
+        background-color: #DD6784 !important;
+    }
+    .alert-md {
+        .alert-button {
+            color: #3f3187 !important;
+        }
+    }
+    .button-clear-md {
+        color: #3f3187 !important;
+    }
+    .datetime-md .datetime-placeholder {
+        color: rgba(63, 49, 135, 0.4) !important;
+    }
+    textarea::placeholder {
+        color: rgba(63, 49, 135, 0.4) !important;
+    }
+    input::placeholder {
+        color: rgba(63, 49, 135, 0.4) !important;
+    }
+    .bar-button-default-md,
+    .bar-button-clear-md-default,
+    .bar-button-md-default {
+        color: white;
+        background-color: transparent;
+        font-size: 1.8rem;
+    }
+    .toolbar-background-md {
+        border-color: transparent;
+        background: transparent;
+    }
+    .item-datetime .label-md {
+        font-weight: 600;
+        font-size: 1.2rem !important;
+        text-transform: uppercase;
+        color: rgba(63, 49, 135, 0.5);
+        margin: 0;
+        font-family: 'segoeui';
+    }
+    .item-datetime .label-ios {
+        font-weight: 600;
+        font-size: 1.2rem !important;
+        text-transform: uppercase;
+        color: rgba(63, 49, 135, 0.5);
+        margin: 0;
+        font-family: 'segoeui';
+    }
+    .bar-button-default-ios,
+    .bar-button-clear-ios-default,
+    .bar-button-ios-default {
+        color: white;
+        background-color: transparent;
+        font-size: 1.5rem;
+    }
+    .toolbar-background-ios {
+        border-color: transparent;
+        background: transparent;
+    }
+    .item-datetime .label-ios {
+        color: #5C399F;
+        margin: 0;
+        font-family: 'segoeui';
+    }
+    // .header-join{
+    //     height: 16.2rem;
+    //     background-color: #5C399F;
+    //     max-width: 100%;
+    // }
+    .center {
+        margin-top: 0rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .no {
+        font-size: 6.8rem;
+        color: #DD6784;
+        display: inline-block;
+        font-weight: 900;
+    }
+    .text-parent {
+        display: inline-block;
+    }
+    .text {
+        font-size: 2.3rem;
+        color: white;
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+    .devider {
+        height: 3px;
+        background-color: white;
+        max-width: 100%;
+        margin: 0.5rem 2rem 0rem 2rem;
+    }
+    .label-md {
+        font-weight: 600;
+        font-size: 1.2rem !important;
+        text-transform: uppercase;
+        line-height: 1.5;
+        //font-weight: bold;
+        font-family: 'segoeui';
+    }
+    .label-ios {
+        font-weight: 600;
+        font-size: 1.2rem !important;
+        text-transform: uppercase;
+        line-height: 1.5;
+        //font-weight: bold;
+        font-family: 'segoeui';
+    }
+    .sk-base-question-presentation ion-label,
+    .sk-base-question-presentation .label[stacked] {
+        color: #513695;
+    }
+    .sk-question-section {
+        color: #513695;
+    }
+    .segment-md .segment-button {
+        padding: 0px 0px !important;
+        border-bottom-width: 0px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(255, 255, 255, 1);
+        font-size: 1.5rem;
+    }
+    .custom-tab1 {
+        max-width: 8rem;
+    }
+    // .custom-tab2{
+    //     .segment-md .segment-button {
+    //     }
+    // }
+    .btn-facebook {
+        font-size: 1.4rem;
+        padding: 2.5rem 0rem !important;
+        background-color: #4267B3;
+        font-weight: normal;
+    }
+    .segment-button {
+        text-align: left;
+        color: white !important;
+    }
+    /////////////////////////////////////////////////////////////////
+    .select-text {
+        color: #3f3187;
+        font-weight: 800;
+        font-size: 1.6rem;
+        font-family: 'segoeui'
+    }
+    .sk-add-photo {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        width: 35%;
+        z-index: 1;
+    }
+    .sk-bg-signup {
+        width: 100%;
+        position: absolute;
+        top: 0%;
+        z-index: -1;
+    }
+    .sk-btn-finish {
+        background-color: #DD6784;
+        width: 40%;
+        margin-top: 10% !important;
+        height: 6rem;
+        border-radius: 5px !important;
+    }
+    .sk-bg-signup-buttom {
+        width: 100%;
+        position: absolute;
+        bottom: 0%;
+    }
+    input::placeholder {
+        color: rgba(63, 49, 135, 0.4) !important;
+    }
+    .toolbar-title-md {
+        color: white;
+    }
+    .header-join {
+        height: 20rem;
+        max-width: 100%;
+    }
+    .center {
+        margin-top: 0rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .no {
+        font-size: 6.5rem;
+        color: #DD6784;
+        display: inline-block;
+        font-weight: 500;
+    }
+    .text-parent {
+        display: inline-block;
+    }
+    .text {
+        font-size: 2.2rem;
+        color: white;
+        font-weight: bold;
+        font-family: 'segoeui'
+    }
+    .devider {
+        height: 3px;
+        background-color: white;
+        max-width: 100%;
+        margin: 0.5rem 2rem 0rem 2rem;
+    }
+    .sk-base-question-presentation ion-label,
+    .sk-base-question-presentation .label[stacked] {
+        color: rgba(63, 49, 135, 0.5);
+    }
+    .sk-login-page-cont form .list ion-item .item-inner input {
+        color: #3f3187;
+        font-weight: 800;
+        font-size: 1.6rem;
+        font-family: 'segoeui'
+    }
+    .sk-login-page-cont form .list ion-item .item-inner {
+        padding-left: 0 !important;
+    }
+    .sk-question-section {
+        color: #513695;
+    }
+    .segment-md .segment-button {
+        padding: 0px 0px !important;
+        border-bottom-width: 0px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(255, 255, 255, 1);
+        font-size: 1.5rem;
+    }
+    .custom-tab1 {
+        max-width: 8rem;
+    }
+    .sk-login-page-cont {
+        height: calc(100% - 1rem);
+        margin-top: 1rem;
+    }
+    .btn-facebook {
+        font-size: 1.4rem;
+        padding: 2.5rem 0rem !important;
+        background-color: #4267B3;
+        font-weight: normal;
+    }
+    .segment-button {
+        text-align: left;
+        color: white !important;
+    }
+    .sk-login-page-cont form .list ion-item {
+        //background-color: rgba(255, 255, 255, 0.2);
+        background-color: transparent;
+        border-radius: 0;
+        padding-left: 0;
+    }
+    .item-divider-md {
+        padding-left: 0 !important;
+    }
+    .item-divider-ios {
+        padding-left: 0 !important;
+    }
+    .sk-login-page-cont form {
+        width: 85%;
+    }
+    .sk-login-page-cont form .sk-buttons-inline button {
+        color: #fff;
+    }
+    .sk-login-page-cont form .list .sk-name .item {
+        margin-bottom: 1rem;
+    }
+    .sk-login-page-cont form .list ion-item {
+        margin-bottom: 1rem;
+    }
+    .sk-login-page-cont form .list {
+        margin-bottom: 0.5rem;
+    }
+    .sk-login-page-cont form .sk-buttons button.sk-login {
+        background-color: #142C71;
+    }
+    .sk-login-page-cont form .sk-buttons button {
+        max-width: 100%;
+        min-width: 0;
+        margin: 1rem 0rem;
+    }
+}
+
+.sk-join-initial-page {
+    // background-color: color($colors, sk-page-bg);
+    background-color: #54C6D0;
+    .sk-join-fields {
+        .sk-add-avatar {
+            //  width: 30vh;
+            //  height: 30vh;
+            //  min-height: 196px;
+            //  min-width: 196px;
+            position: absolute;
+            top: -60px;
+            right: 0;
+            width: 18vh !important;
+            height: 18vh !important;
+            min-height: 132px !important;
+            min-width: 132px !important;
+            border-bottom-left-radius: 100% !important;
+            border-bottom-right-radius: 90% !important;
+            border-top-left-radius: 90% !important;
+            @include flex(flex, column, center, center);
+            border: 2px solid $sk-join-initial-avatar;
+            border-radius: 10px;
+            color: $sk-join-initial-avatar;
+            font-size: 2rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            @include margin(6rem auto 4rem auto);
+            ion-label {
+                flex: none;
+            }
+            .icon {
+                @include margin(null 1.5rem null null);
+                font-size: 4.2rem;
+            }
+        }
+    }
+}
+
+.sk-login-page {
+    //background-image: url("../assets/img/custom-images/index.jpg");
+    background-size: cover;
+    background-position: center top;
+    &-cont {
+        @include flex(flex, column, flex-start, center);
+        height: calc(100% - 1rem);
+        margin-top: 1rem;
+        .sk-logo-wrap {
+            flex-grow: 2;
+            padding: 2rem;
+            @include flex(flex, row, center, center);
+            margin-bottom: 1rem;
+            img {
+                width: $sk-login-logo-width;
+                height: $sk-login-logo-height;
+            }
+        }
+        form {
+            flex-grow: 2;
+            @include flex(flex, column, flex-start, stretch);
+            width: 70%;
+            .list {
+                margin-bottom: 2rem;
+                .sk-name {
+                    .item {
+                        margin-bottom: 2rem;
+                        .item-inner {
+                            background-image: url("../assets/img/custom-images/ic-login-name.svg");
+                        }
+                    }
+                }
+                .sk-password {
+                    .item-inner {
+                        background-image: url("../assets/img/custom-images/ic-login-pass.svg");
+                    }
+                }
+                ion-item {
+                    background-color: $sk-login-input-bg;
+                    border-radius: 4px;
+                    &.item-input:last-child {
+                        border: none;
+                    }
+                    .item-inner {
+                        border: 0;
+                        background-repeat: no-repeat;
+                        background-size: auto 2.4rem;
+                        @include background-position(start,
+                        center);
+                        @include padding (null,
+                        null,
+                        null,
+                        0px);
+                        input {
+                            font-size: 1.6rem;
+                            color: $sk-login-input-fcolor;
+                            @include placeholder ($sk-login-input-placeholder);
+                        }
+                    }
+                }
+            }
+            .sk-buttons {
+                @include flex(flex,
+                column,
+                flex-start,
+                stretch);
+                flex-grow: 1;
+                button {
+                    margin-bottom: 2rem;
+                    max-width: 100%;
+                    min-width: 0;
+                    &.sk-login {
+                        background-color: $sk-login-inline-signin;
+                        margin-bottom: 1.5rem;
+                        margin-top: 0;
+                    }
+                }
+                &-inline {
+                    @include flex(flex,
+                    column,
+                    space-between,
+                    stretch);
+                    button {
+                        height: 1.4em;
+                        font-size: 1.4rem;
+                        padding: 0;
+                        color: $sk-login-inline-btn-color;
+                        &.sk-signup {
+                            color: $sk-login-inline-signup;
+                        }
+                    }
+                }
+                .sk-facebook-wrap {
+                    text-align: center;
+                    margin-top: auto;
+                    .sk-facebook-label {
+                        overflow: hidden;
+                        color: $sk-login-fb-label-color;
+                        font-size: 1.2rem;
+                        text-transform: uppercase;
+                        &:after,
+                        &:before {
+                            background-color: $sk-login-fb-border-color;
+                            content: "";
+                            display: inline-block;
+                            height: 1px;
+                            position: relative;
+                            vertical-align: middle;
+                            width: 50%;
+                            @include position(null,
+                            null,
+                            null,
+                            0.5rem);
+                            @include margin(null,
+                            -50%,
+                            null,
+                            null)
+                        }
+                        &:before {
+                            @include position(null,
+                            0.5rem,
+                            null,
+                            auto);
+                            @include margin(null,
+                            0,
+                            null,
+                            -50%)
+                        }
+                    }
+                    .sk-facebook {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        width: 4.7rem;
+                        height: 4.7rem;
+                        min-width: 0;
+                        background: url("../assets/img/custom-images/ic-fb.svg");
+                        &-button-wrap {
+                            padding-top: 1.5rem;
+                            @include flex(flex,
+                            row,
+                            center,
+                            center);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sk-login-url {
+    button {
+        color: $sk-login-url-color;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .sk-login-page {
+        .sk-login-page-cont {
+            height: auto;
+            .sk-logo-wrap {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .sk-login-page .sk-login-page-cont form .sk-buttons {
+        min-height: 200px;
+        .sk-login {
+            margin-bottom: 2vh;
+        }
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and ( min--moz-device-pixel-ratio: 1.25), only screen and ( -o-min-device-pixel-ratio: 1.25/1), only screen and ( min-device-pixel-ratio: 1.25), only screen and ( min-resolution: 200dpi), only screen and ( min-resolution: 1.25dppx) {
+    .sk-login-page {
+        //background-image: url("../assets/img/custom-images/index@2x.jpg");
+        background-color: #54C6D0;
+    }
+    .sk-signup-page {
+        //background-image: url("../assets/img/custom-images/index@2x.jpg");
+        background-color: #54C6D0;
+    }
+}

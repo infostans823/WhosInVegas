@@ -1,0 +1,25 @@
+app-settings{
+    .sk-iframe{
+        top: 0.4rem;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+}
+
+.sk-app-settings-page {
+    background-color: color($colors, sk-page-bg);
+}
+
+.sk-app-settings-footer {
+    .sk-buttons {
+        button {
+            max-width: 100%;
+            background-color: color($colors, light);
+            margin-top: 0.6rem;
+            color: color($colors, primary);
+        }
+    }
+}

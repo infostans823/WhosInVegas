@@ -1,0 +1,63 @@
+<!-- <div class="sk-dashboard-tabs">
+
+    profile tab
+    <div class="sk-tabs-item sk-tabs-profile {{ activeComponent == dashboard.profilePage ? 'active' : '' }}" (click)="changeComponent(dashboard.profilePage)">
+        <img class="sk-tab-ic-active" src="./assets/img/custom-images/ic-profile-active.svg" alt="Profile" />
+        <img class="sk-tab-ic-passive" src="./assets/img/custom-images/ic-profile-passive.svg" alt="Profile" />
+    </div>
+
+    search tab
+    <div class="sk-tabs-item {{ activeComponent == dashboard.searchPage ? 'active' : '' }} ">
+        hot list, tinder, search toggles
+        <div class="sk-tab-toggle">
+
+            <div *ngIf="siteConfigs.isPluginActive('hotlist')" class="sk-tab-toggle-item sk-tab-toggle-hot-list {{ activeSubComponent == dashboard.hotListPage ? 'active' : '' }}" (click)="changeComponent(dashboard.searchPage, dashboard.hotListPage)">
+                <img class="sk-toggle-ic-active" src="./assets/img/custom-images/ic-hotlist-active.svg" alt="Hotlist" />
+                <img class="sk-toggle-ic-passive" src="./assets/img/custom-images/ic-hotlist-passive.svg" alt="Hotlist" />
+            </div>
+
+            <div *ngIf="!siteConfigs.isBrowseSearchMode()" class="sk-tab-toggle-item sk-tab-toggle-tinder {{ activeSubComponent == dashboard.tinderPage ? 'active' : '' }}" (click)="changeComponent(dashboard.searchPage, dashboard.tinderPage)">
+                <img class="sk-toggle-ic-active" src="./assets/img/custom-images/ic-tinder-active.svg" alt="Tinder" />
+                <img class="sk-toggle-ic-passive" src="./assets/img/custom-images/ic-tinder-passive.svg" alt="Tinder" />
+            </div>
+
+            <div *ngIf="!siteConfigs.isTinderSearchMode()" class="sk-tab-toggle-item sk-tab-toggle-search {{ activeSubComponent == dashboard.browsePage ? 'active' : '' }}" (click)="changeComponent(dashboard.searchPage, dashboard.browsePage)">
+                <img class="sk-toggle-ic-active" src="./assets/img/custom-images/ic-search-active.svg" alt="Search" />
+                <img class="sk-toggle-ic-passive" src="./assets/img/custom-images/ic-search-passive.svg" alt="Search" />
+            </div>
+
+            <div class="sk-tab-toggle-active-background"></div>
+
+        </div>
+    </div>
+
+    conversations tab
+    <div class="sk-tabs-item sk-tabs-conversations {{ activeComponent == dashboard.conversationsPage ? 'active' : '' }} {{ (newConversationsCount$ | async) || (newMatchedUsersCount$ | async) ? 'sk-conversation-notification' : '' }}" (click)="changeComponent(dashboard.conversationsPage)">
+        <img class="sk-tab-ic-active" src="./assets/img/custom-images/ic-conversations-active.svg" alt="Conversations" />
+        <img class="sk-tab-ic-passive" src="./assets/img/custom-images/ic-conversations-passive.svg" alt="Conversations" />
+    </div>
+
+</div> -->
+
+<div class="sk-custom-tab" >
+    <div>
+            <img *ngIf="mSelectedTab == 'matches'" class="sk-matches" src="./assets/img/custom-images/bg_matches.png">
+            <img *ngIf="mSelectedTab == 'search'" class="sk-matches" src="./assets/img/custom-images/bg_search.png">
+            <img *ngIf="mSelectedTab == 'trips'" class="sk-matches" src="./assets/img/custom-images/bg_trips.png">
+            <img *ngIf="mSelectedTab == 'deals'" class="sk-matches" src="./assets/img/custom-images/bg_deals.png">
+            <img *ngIf="mSelectedTab == 'profile' || mSelectedTab == 'conversations'" class="sk-matches" src="./assets/img/custom-images/bg_unselect.png">
+    
+            <img (click)="matches()" class="botton-1" src="./assets/img/custom-images/matches_{{mSelectedTab=='matches' ? 'fill' : 'empty'}}.png">
+            <img (click)="search()" class="botton-2" src="./assets/img/custom-images/search_{{mSelectedTab=='search' ? 'fill' : 'empty'}}.png">
+            <img (click)="trips()" class="botton-3" src="./assets/img/custom-images/trips_{{mSelectedTab=='trips' ? 'fill' : 'empty'}}.png">
+            <img (click)="deals()"class="botton-4" src="./assets/img/custom-images/deals_{{mSelectedTab=='deals' ? 'fill' : 'empty'}}.png">
+
+            <div *ngIf="mSelectedTab == 'profile' || mSelectedTab == 'conversations'"> 
+                    <img (click)="matches()" class="botton-1" src="./assets/img/custom-images/matches_unselect.png">
+                    <img (click)="search()" class="botton-2" src="./assets/img/custom-images/search_unselect.png">
+                    <img (click)="trips()" class="botton-3" src="./assets/img/custom-images/trips_unselect.png">
+                    <img (click)="deals()"class="botton-4" src="./assets/img/custom-images/deals_unselect.png">
+            </div>
+            
+    </div>
+</div>

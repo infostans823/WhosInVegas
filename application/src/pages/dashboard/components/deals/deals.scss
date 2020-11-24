@@ -1,0 +1,77 @@
+deals {
+
+  .sk-header-text{
+    font-weight: bolder;
+    text-align: left;
+    margin-top: 2%;
+  }
+
+  .sk-header-img{
+    padding: 0% !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sk-discount-text{
+    text-align: left;
+    position: absolute;
+    z-index: 5;
+    top: 9%;
+    left: 8%;
+    font-size: 70%;
+    color: white;
+  }
+
+  .sk-bg-discount{
+    position: absolute;
+    z-index: 2;
+    top: 8%;
+    width: 34%;
+  }
+
+  .sk-title-text{
+    text-align: left;
+    font-size: 1.2rem;
+    color: gray;
+    margin-top: 2%;
+  }
+
+  .sk-img{
+    display: inline-block;
+    width: 6%;
+  }
+
+  .sk-text{
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 1%;
+    font-size: 1.2rem;
+    color: gray;
+  }
+
+  .sk-detail{
+    text-align: left;
+    margin-top: 1%;
+  }
+
+  .card-md {
+    border-radius: 6px !important; 
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6) !important;
+  }
+
+   .scroll-content {
+    padding: 2% 4% 0% 4%;
+    margin-bottom: 27%;
+  }
+
+  .sk-search{
+    background-color: #E8E9EB;
+    padding: 3% 5%;
+  }
+   
+  ion-searchbar.searchbar .searchbar-input-container .searchbar-input {
+    background-color: white;
+  }
+}

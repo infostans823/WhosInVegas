@@ -1,0 +1,41 @@
+page-delet-trip-alert {
+    .btn-cls {
+        color: white;
+        text-align: center;
+        margin-top: 5rem;
+        font-weight: bold;
+        background: #54C6D0;
+        width: 85%!important;
+        margin-left: 8%!important;
+        margin-top: 15% !important;
+        height: 13% !important;
+        text-transform: uppercase;
+    }
+    .popup-div {
+        background: white;
+        border-radius: 20px;
+        margin-top: 15%;
+        height: 80%;
+    }
+    .img-bag {
+        width: 12%;
+        margin-left: 44%;
+        margin-top: 10%;
+    }
+    .trip-txt {
+        text-align: center;
+        font-size: 2em;
+        margin-top: 5%;
+    }
+    .txt-cls {
+        text-align: center;
+        color: gray;
+        margin-top: 6rem;
+    }
+    .txt-no-thnk {
+        color: gray;
+        margin-top: 10%;
+        text-align: center;
+        font-weight: bold;
+    }
+}

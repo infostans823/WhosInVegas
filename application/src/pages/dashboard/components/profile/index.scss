@@ -1,0 +1,415 @@
+profile {
+
+    .sk-toolbar-bg-profile11 {
+        border-color: transparent;
+        background-image: url("../assets/img/custom-images/toolbar_bg.png");
+        background-size: cover;
+        background-position: center;
+        margin: auto;
+        z-index: 0;
+    }
+
+    .sk-iframe {
+        top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    .sk-ads-bg {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        z-index: 0;
+        width: 100%;
+        height: 5.5rem;
+    }
+
+    .sk-photo-pending,
+    .sk-photo-processing {
+        //background-color: rgba(255, 255, 255, 0.7);
+        background-color: transparent;
+    }
+
+    .sk-user-edit-base .sk-photo-pending {
+        left: 0;
+        z-index: 0;
+    }
+
+    .sk-online-invegas {
+        width: 4%;
+        margin-right: 2%;
+    }
+
+    ////////////////////TUSHAR CSS/////////////////////////////
+    .enb {
+        // .expand-wrapper {
+            height: 200px !important;
+        // }
+    }
+    .dis {
+        // .expand-wrapper {
+            height: 150px !important;
+        // }
+    }
+    .zero {
+        // .expand-wrapper {
+            height: 0px !important;
+        // }
+    }
+
+    .card-hori-proView {
+        width: 28% !important;
+        display: inline-block;
+        margin: 0% 0.9rem;
+        text-align: center;
+    }
+
+    .scroll-hori-proView {
+        min-height: 100%;
+        height: auto;
+
+        .scroll-content {
+            padding: 0px !important;
+        }
+
+        .scroll-zoom-wrapper {
+            white-space: nowrap;
+        }
+    }
+
+    .card-img-res {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50px;
+        box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-title-size {
+        font-size: 1.4rem;
+        padding: 0;
+    }
+
+    .dis-heading-img {
+        width: 11%;
+        margin-bottom: -4%;
+        display: inline-block
+    }
+
+    .dis-heading-txt {
+        color: gray;
+        font-size: 1rem;
+    }
+
+    .expnd-set-cls {
+        white-space: normal !important;
+        pointer-events: all !important;
+    }
+
+    ////////////////Horizontal card design///////////////////
+    .card-md {
+        border-radius: 6px !important;
+        margin: 8px !important;
+    }
+
+    .card-ios {
+        border-radius: 6px !important;
+        margin: 8px !important;
+    }
+
+    .card-content-md {
+        padding: 5% 8% !important;
+        text-align: left;
+    }
+
+    .card-content-ios {
+        padding: 5% 8% !important;
+        text-align: left;
+    }
+
+    .card-title-md {
+        padding: 2px 0 !important;
+        margin: 0 0 !important;
+    }
+
+    .card-title-ios {
+        padding: 2px 0 !important;
+        margin: 0 0 !important;
+    }
+
+    .scroll-hori-proView {
+        min-height: 60% !important;
+        margin-left: 2.5%;
+        height: auto;
+    }
+
+    /////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////
+
+    .sk-title-message {
+        text-align: left;
+        padding: 0px 5%;
+        color: gray;
+        font-size: 1.5rem;
+    }
+
+    .item-md {
+        padding-left: 0px !important;
+    }
+
+    .item-md.item-block .item-inner {
+        padding-right: 0% !important;
+        padding-left: 4% !important;
+    }
+
+    .item-md.item-block .item-inner {
+        border-bottom: 0px solid #D8D8D8;
+    }
+
+    .item-ios.item-block .item-inner {
+        border-bottom: 0px solid #D8D8D8;
+    }
+
+    .label-md {
+        margin: 13px 8px 0px 0px !important;
+    }
+
+    .sk-dashboard-toolbar {
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .sk-bg-profile {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+    }
+
+    .toolbar-background-md {
+        background: transparent;
+    }
+
+    .toolbar-title-md {
+        color: white;
+    }
+
+    .sk-header {
+        position: absolute;
+        width: 100%;
+
+    }
+
+
+    .sk-header-left {
+        display: inline-block;
+        position: absolute;
+        left: -6%;
+    }
+
+    .sk-header-right {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+    }
+
+    .sk-edit-profile {
+        position: absolute;
+        right: 3%;
+        top: 2%;
+        width: 30%;
+    }
+
+    .sk-header-profile {
+        width: 14%;
+        display: inline-block;
+    }
+
+    .sk-header-matches {
+        width: 17%;
+        display: inline-block;
+        margin-left: 10%;
+    }
+
+    .sk-header-menu {
+        width: 28%;
+        display: inline-block;
+        margin-left: 36%;
+    }
+
+    .item-md h2 {
+        font-size: 1.6rem;
+    }
+}
+
+.sk-profile-tab {
+    .sk-user {
+
+        padding-bottom: 20%;
+
+        .sk-user-avatar {
+            @include flex(flex, row, center, stretch);
+            //position: relative;
+            //height: 70vw;
+            width: 80%;
+            margin: 5.5rem auto 0;
+            border-radius: $button-round-border-radius;
+            overflow: hidden;
+
+            .sk-user-avatar-img {
+                position: relative;
+                width: 60%;
+                height: 60%;
+
+                user-avatar {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 10px;
+                    background: transparent;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        vertical-align: top;
+                        border: solid 4.5px white;
+                        box-shadow: 1px 2px 8px rgba(0, 0, 0, .5);
+                    }
+                }
+
+                .sk-photo-pending {
+                    top: 0;
+
+                    img {
+                        width: 10vh;
+                        height: 10vh;
+                    }
+                }
+            }
+
+            .sk-user-avatar-buttons {
+                @include flex(flex, row, center, center);
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+
+                button {
+                    border-radius: 0;
+                    height: 5rem;
+                    margin: 0;
+                    padding: 0 1.5rem;
+                    border-width: 2px;
+                    background-color: $sk-profile-button-bg;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    flex: 1;
+
+                    &:first-child {
+                        &:after {
+                            display: block;
+                            z-index: 0;
+                            position: absolute;
+                            bottom: 50%;
+                            transform: translateY(50%);
+                            @include position($top: null, $end: 0, $bottom: null, $start: null);
+                            background-color: $sk-profile-button-delimiter-color;
+                            content: " ";
+                            height: 3.5rem;
+                            width: 2px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .sk-user-info {
+            @include flex(flex, row, center, center);
+            padding: 1vh 2rem;
+
+            span {
+                max-width: 80%;
+                @include text-overflow;
+            }
+
+            .sk-name {
+                color: $sk-profile-tab-name;
+                font-size: 2rem;
+                margin-bottom: 0.3rem;
+                font-weight: bolder;
+                font-family: 'segoeui';
+            }
+
+            .sk-about {
+                font-size: 1.8rem;
+                color: $sk-profile-tab-about;
+            }
+        }
+
+        .sk-user-link-pwa-guide {
+            font-weight: bold;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            height: 4.3rem;
+            width: 100%;
+            margin: 0;
+            background-color: $sk-user-link-pwa-bg;
+            color: $sk-user-link-pwa-color;
+            border-top: none;
+            border-radius: 0;
+        }
+
+        .sk-user-links {
+            @include flex(flex, row, flex-start, stretch);
+            flex-wrap: wrap;
+            border-bottom: 2px solid $sk-profile-link-border-color;
+
+            button {
+                height: 7rem;
+                border-top: 1px solid $sk-profile-link-border-color;
+                width: 50%;
+                margin: 0;
+                border-radius: 0;
+                color: $sk-profile-link;
+                font-weight: bold;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+
+                &:nth-child(odd) {
+                    @include ltr() {
+                        border-right: 1px solid $sk-profile-link-border-color;
+                    }
+
+                    @include rtl() {
+                        border-left: 1px solid $sk-profile-link-border-color;
+                    }
+                }
+
+                &>span {
+                    display: inline;
+                    text-align: center;
+                    white-space: normal;
+                }
+            }
+        }
+    }
+
+    .sk-guest-count {
+        @include flex(inline-flex, row, center, center);
+        min-width: 22px;
+        width: 2.2rem;
+        height: 2.2rem;
+        @include margin(null, null, null, 8px);
+        font-weight: normal;
+        font-size: 1.2rem;
+        color: color($colors, light);
+        background-color: $sk-guest-count;
+        border-radius: 50%;
+    }
+}

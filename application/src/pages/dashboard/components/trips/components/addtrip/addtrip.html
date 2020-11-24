@@ -1,0 +1,65 @@
+<!--
+  Generated template for the AddtripPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <!-- hideBackButton="true"-->
+        <ion-title class="sk-title">{{Title_Lable}}</ion-title>
+        <ion-buttons end>
+            <button ion-button clear (click)="submit()">Save</button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div class="sk-bg">
+        <div style="text-align: center;">
+            <img style="width: 18%;" src="assets/img/custom-images/bag.png">
+            <div class="sk-text">When are you in Vegas?</div>
+        </div>
+
+        <img class="sk-line" src="assets/img/custom-images/line_add_trip.png">
+
+
+        <div class="sk-date">
+            <ion-label>TRIP START DATE</ion-label>
+            <ion-datetime class="sk-date-picker" displayFormat="DD/MMM/YYYY" pickerFormat="DD/MMM/YYYY"
+                [(ngModel)]="startDate" [min]="today()" [max]="2025"></ion-datetime>
+            <div class="sk-date-selactor"><img class="" src="assets/img/custom-images/day_bg.png"><span
+                    style="left: 30%;">{{startDate | date: 'dd'}}</span></div>
+            <div class="sk-date-selactor"> <img class="" src="assets/img/custom-images/month_bg.png"><span
+                    style="left: 26%;">{{startDate | date: 'MMM'}}</span></div>
+            <div class="sk-date-selactor"><img class="" src="assets/img/custom-images/year_bg.png"><span
+                    style="left: 19%;">{{startDate | date: 'yyyy'}}</span></div>
+        </div>
+
+        <div class="sk-date">
+            <ion-label>TRIP END DATE</ion-label>
+            <ion-datetime class="sk-date-picker" displayFormat="DD/MMM/YYYY" pickerFormat="DD/MMM/YYYY"
+                [(ngModel)]="endDate" [min]="nextDay()" [max]="2025"></ion-datetime>
+            <div class="sk-date-selactor"><img class="" src="assets/img/custom-images/day_bg.png"><span
+                    style="left: 30%;">{{endDate | date: 'dd'}}</span></div>
+            <div class="sk-date-selactor"> <img class="" src="assets/img/custom-images/month_bg.png"><span
+                    style="left: 26%;">{{endDate | date: 'MMM'}}</span></div>
+            <div class="sk-date-selactor"><img class="" src="assets/img/custom-images/year_bg.png"><span
+                    style="left: 19%;">{{endDate | date: 'yyyy'}}</span></div>
+        </div>
+
+
+        <!-- ad
+        <iframe src="https://whosinvegas.com/rits_ads.php" width="320" height="50" scrolling="no" marginheight="0"
+            marginwidth="0" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen"
+            msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
+            webkitallowfullscreen="webkitallowfullscreen" data-gtm-yt-inspected-1_27="true">
+        </iframe> -->
+
+    </div>
+
+</ion-content>

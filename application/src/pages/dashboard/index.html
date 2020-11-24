@@ -1,0 +1,102 @@
+<ion-header>
+    <div class="{{ mSelectedTab == 'profile' ? 'sk-toolbar-bg-profile' : 'sk-toolbar-bg-message' }}">
+        <ion-toolbar>
+            <div class="sk-header-left">
+                <img (click)="customChangeComponent('profile')" class="sk-header-profile"
+                    src="assets/img/custom-images/{{mSelectedTab}}_icon_user.png">
+                <img (click)="customChangeComponent('conversations')" class="sk-header-conversations"
+                    src="assets/img/custom-images/{{mSelectedTab}}_icon_heart.png">
+            </div>
+
+            <ion-title>
+                <div *ngIf="mSelectedTab == 'profile'" style="color: white">My Profile</div>
+                <div style="color: black" *ngIf="mSelectedTab == 'conversations'">Chat</div>
+                <div style="color: black" *ngIf="mSelectedTab == 'tinder'">Matches</div>
+                <div style="color: black" *ngIf="mSelectedTab == 'search'">Search</div>
+                <div style="color: black" *ngIf="mSelectedTab == 'trips'">Trips</div>
+                <div style="color: black" *ngIf="mSelectedTab == 'deals'">Deals</div>
+            </ion-title>
+
+            <div class="sk-header-right">
+                <img menuToggle class="sk-header-menu" src="assets/img/custom-images/{{mSelectedTab}}_icon_menu.png">
+            </div>
+        </ion-toolbar>
+    </div>
+</ion-header>
+
+<ion-content no-bounce class="sk-dashboard-page">
+    <!-- components slider -->
+    <div class="sk-components-slider-wrapper sk-height-wrap" ion-fixed>
+        <ion-slides class="swiper-no-swiping" #componentsSlider [dir]="application.getLanguageDirection()"
+            [initialSlide]="dashboard.getComponentIndexByName(dashboard.getActiveComponent())"
+            (ionSlideDidChange)="componentsSliderDidChange()">
+            <!-- profile -->
+            <ion-slide>
+                <profile [isDashboardLoading]="isPageLoading"></profile>
+            </ion-slide>
+
+            <!-- hot list, tinder, search -->
+            <ion-slide>
+                <hot-list
+                    *ngIf="siteConfigs.isPluginActive('hotlist') && dashboard.isActiveSubComponent(dashboard.hotListPage)"
+                    [isDashboardLoading]="isPageLoading"></hot-list>
+                <tinder
+                    *ngIf="siteConfigs.isTinderSearchAllowed() && dashboard.isActiveSubComponent(dashboard.tinderPage)"
+                    [isDashboardLoading]="isPageLoading"></tinder>
+                <search
+                    *ngIf="siteConfigs.isBrowseSearchAllowed() && dashboard.isActiveSubComponent(dashboard.browsePage)"
+                    [isDashboardLoading]="isPageLoading"></search>
+                <deals *ngIf="dashboard.isActiveSubComponent(dashboard.dealsPage)"></deals>
+                <trips *ngIf="dashboard.isActiveSubComponent(dashboard.tripsPage) && isDashboardActive"></trips>
+            </ion-slide>
+
+            <!-- conversations -->
+            <ion-slide>
+                <conversations [isDashboardLoading]="isPageLoading"></conversations>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>
+
+<ion-footer>
+
+    <div class="sk-custom-tab">
+        <div>
+            <img *ngIf="mSelectedTab == 'tinder'" class="sk-matches" src="./assets/img/custom-images/bg_matches.png">
+            <img *ngIf="mSelectedTab == 'search'" class="sk-matches" src="./assets/img/custom-images/bg_search.png">
+            <img *ngIf="mSelectedTab == 'trips'" class="sk-matches" src="./assets/img/custom-images/bg_trips.png">
+            <img *ngIf="mSelectedTab == 'deals'" class="sk-matches" src="./assets/img/custom-images/bg_deals.png">
+            <img *ngIf="mSelectedTab == 'profile' || mSelectedTab == 'conversations'" class="sk-matches"
+                src="./assets/img/custom-images/bg_unselect.png">
+
+            <img (click)="tabChangeComponent('search','tinder')" class="botton-1"
+                src="./assets/img/custom-images/matches_{{mSelectedTab=='tinder' ? 'fill' : 'empty'}}.png">
+            <img (click)="tabChangeComponent('search','search')" class="botton-2"
+                src="./assets/img/custom-images/search_{{mSelectedTab=='search' ? 'fill' : 'empty'}}.png">
+            <img (click)="tabChangeComponent('search','trips')" class="botton-3"
+                src="./assets/img/custom-images/trips_{{mSelectedTab=='trips' ? 'fill' : 'empty'}}.png">
+            <img (click)="tabChangeComponent('search','deals')" class="botton-4"
+                src="./assets/img/custom-images/deals_{{mSelectedTab=='deals' ? 'fill' : 'empty'}}.png">
+
+            <div *ngIf="mSelectedTab == 'profile' || mSelectedTab == 'conversations'">
+                <img (click)="tabChangeComponent('search','tinder')" class="botton-1"
+                    src="./assets/img/custom-images/matches_unselect.png">
+                <img (click)="tabChangeComponent('search','search')" class="botton-2"
+                    src="./assets/img/custom-images/search_unselect.png">
+                <img (click)="tabChangeComponent('search','trips')" class="botton-3"
+                    src="./assets/img/custom-images/trips_unselect.png">
+                <img (click)="tabChangeComponent('search','deals')" class="botton-4"
+                    src="./assets/img/custom-images/deals_unselect.png">
+            </div>
+
+            <div class="sk-bottom-text-1 sk-color-{{mSelectedTab == 'tinder' ? 'black' : 'gray'}}">MATCHES</div>
+            <div class="sk-bottom-text-2 sk-color-{{mSelectedTab == 'search' ? 'black' : 'gray'}}">SEARCH</div>
+            <div class="sk-bottom-text-3 sk-color-{{mSelectedTab == 'trips'  ? 'black' : 'gray'}}">TRIPS</div>
+            <div class="sk-bottom-text-4 sk-color-{{mSelectedTab == 'deals'  ? 'black' : 'gray'}}">DEALS</div>
+
+        </div>
+    </div>
+
+    <ion-toolbar style="min-height: 72px;" class="sk-dashboard-toolbar">
+    </ion-toolbar>
+</ion-footer>

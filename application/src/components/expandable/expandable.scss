@@ -1,0 +1,35 @@
+expandable {
+
+  .expand-wrapper {
+    height: 0;
+    transition: 0.2s linear;
+  }
+
+  .collapsed {
+    height: 0 !important;
+  }
+
+  .img_set_pos {
+    width: 50% !important;
+    border: 0;
+  }
+  .btn_size_cls{
+    width: 45%;
+    margin-top: 5%;
+    // height: 28%;
+    border-radius: 50px !important;
+  }
+  .btn_size_cls-enb{
+    width: 45%;
+    margin-top: 5%;
+    height: 28%;
+    border-radius: 50px !important;
+  }
+  .btn_size_cls-dis{
+    width: 45%;
+    margin-top: 5%;
+    height: 34%;
+    border-radius: 50px !important;
+  }
+
+}

@@ -1,0 +1,89 @@
+page-addtrip {
+
+    .sk-date{
+        //@include flex(flex, row, center, center);
+        text-align: center;
+    }
+
+    .sk-date-selactor{
+        display: inline-block;
+        width: 20%;
+        margin: 0% 2%;
+        position: relative;
+        img{
+            height: 40px;;
+        }
+        span{
+            position: absolute;
+            //left: 20px;
+            top: 10px;
+        }
+    }
+
+    .sk-day-selactor{
+        display: inline-block;
+        width: 16%;
+        margin: 0% 2%;
+    }
+
+    .sk-title{
+        text-align: center;
+    }
+
+    .back-button-md {
+        margin: 0 0 !important;
+    }
+
+    .back-button-text {
+        margin-left: 2%;
+        margin-top: 2px;
+    }
+
+    .button-inner {
+        color: #54C6D0;
+    }
+
+    .toolbar-title-md {
+        padding: 0px 4% 0px 0px !important;
+    }
+
+    .sk-text{
+        font-weight: bolder;
+        margin-top: 4%;
+    }
+
+    .sk-bg{
+        background-color: #E8E9EB;
+        padding: 10% 0%;
+    }
+
+    .item-md {
+        background: transparent;
+    }
+
+    .label-md {
+        text-align: left;
+        margin: 13px 8px 13px 17% !important;
+        color: #A18EBC !important;
+        font-size: 1.2rem !important;
+        font-weight: bold;
+    }
+
+    .sk-line{
+        margin-top: 7%;
+        margin-bottom: 4%;
+        height: 2px;
+    }
+
+    .sk-date-picker{
+        position: absolute;
+        width: 65%;
+        left: 18%;
+        z-index: 1;
+    }
+    
+    .datetime-text {
+        color: transparent;
+    }
+
+}

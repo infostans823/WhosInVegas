@@ -1,0 +1,34 @@
+<!--
+  Generated template for the TripsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<iframe src="https://whosinvegas.com/rits_ads.php" width="320" height="50" scrolling="no" marginheight="0"
+                marginwidth="0" frameborder="0" allowfullscreen="allowfullscreen"
+                mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen"
+                oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"
+                data-gtm-yt-inspected-1_27="true">
+            </iframe>
+
+<div class="sk-trips">
+    <img (tap)="showAddTripModal()" src="assets/img/custom-images/add_trip.png">
+</div>
+
+<ion-segment mode="md" scrollable>
+    <ion-segment-button class="sk-tab-1">
+        <ion-label class="sk-tab-{{ mSelectedTab == 'current' ? 'select' : 'unselect' }}" (click)="selectedTabe('current')">Current</ion-label>
+    </ion-segment-button>
+    <!-- <ion-segment-button class="sk-tab-2">
+        <ion-label class="sk-tab-{{ mSelectedTab == 'past' ? 'select' : 'unselect' }}" (click)="selectedTabe('past')">Past</ion-label>
+    </ion-segment-button> -->
+    <ion-segment-button>
+        <ion-label class="sk-tab-{{ mSelectedTab == 'mytrip' ? 'select' : 'unselect' }}" (click)="selectedTabe('mytrip')">All Trips</ion-label>
+    </ion-segment-button>
+</ion-segment>
+
+<img style="height: 2px;" src="assets/img/custom-images/line.png">
+
+<page-current *ngIf="mSelectedTab == 'current'" activeComponent="current"></page-current>
+<!-- <page-current *ngIf="mSelectedTab == 'past'" activeComponent="past"></page-current> -->
+<page-current *ngIf="mSelectedTab == 'mytrip'" activeComponent="mytrip"></page-current>

@@ -1,0 +1,74 @@
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav #content swipeBackEnabled="false"></ion-nav>
+<install-pwa-banner></install-pwa-banner>
+
+<!-- MENU CODE-->
+<ion-menu [content]="content">
+    <ion-content>
+
+        <!-- bg Image -->
+        <img class="sk-bg-profile" src="assets/img/custom-images/profile_bg.png">
+
+        <div class="sk-user-new">
+            <div class="sk-user-avatar-new">
+                <div class="sk-user-avatar-new-img">
+                    <user-avatar isUseBigAvatar="false" [url]="my.avatar?.pendingUrl"></user-avatar>
+                    <div *ngIf="my.avatar?.id && !my.avatar?.active" class="sk-photo-pending">
+                        <img src="./assets/img/ic-pending.svg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sk-user-info-new">
+            <img *ngIf="my.isInVegas" class="sk-online-invegas" src="./assets/img/custom-images/criste.png" />
+            <img *ngIf="my.isOnline" class="sk-online-invegas" src="./assets/img/custom-images/green_dot.png" />
+            <span class="sk-name-new">
+                {{ my.userName }}
+            </span>
+        </div>
+        <ion-list>
+            <!-- use for borrderline  -->
+            <ion-item style="padding-left: 0;"></ion-item>
+
+            <!-- setting button -->
+            <button style="padding-left: 0;" menuClose ion-item (click)="setting()">
+                <ion-label style=" font-family: 'segoeui';color: gray;line-height: 3.5;padding-left: 20px;text-rendering: geometricPrecision">Settings</ion-label>
+            </button>
+
+            <!-- Terms and conditions -->
+            <ion-item style="padding-left: 0;" menuClose ion-item (click)="showTermsOfUseModal()" class="sk-select-field-fake sk-termsofuse-button">
+                <ion-label style=" font-family: 'segoeui';color: gray;line-height: 3.5;padding-left: 20px;text-rendering: geometricPrecision;">Terms and Conditions</ion-label>
+            </ion-item>
+
+            <!-- Privacy policy  -->
+            <ion-item style="padding-left: 0;" menuClose ion-item (click)="showPrivacyPolicyModal()" class="sk-select-field-fake sk-privacy-button">
+                <ion-label style=" font-family: 'segoeui';color: gray;line-height: 3.5;padding-left: 20px;text-rendering: geometricPrecision">{{ 'app_settings_privacy_policy_label' | translate }}
+                </ion-label>
+            </ion-item>
+
+            <!-- Help Tutiorial  -->
+            <ion-item style="padding-left: 0;" menuClose ion-item (click)="helpTutorial()" class="sk-select-field-fake sk-privacy-button">
+                <ion-label style=" font-family: 'segoeui';color: gray;line-height: 3.5;padding-left: 20px;text-rendering: geometricPrecision">Help Tutorial
+                </ion-label>
+            </ion-item>
+
+            <!-- Contact Us  -->
+            <ion-item style="padding-left: 0;" menuClose ion-item class="sk-select-field-fake sk-privacy-button">
+                <ion-label ><a style=" font-family: 'segoeui';color: gray;line-height: 3.5;padding-left: 20px;text-rendering: geometricPrecision;text-decoration: none !important;" href="mailto:info@whosinvegas.com">Contact Us</a>
+                </ion-label>
+            </ion-item>
+
+            <!-- Logout -->
+            <div style="text-align: center;margin-top: 8%;margin-bottom: 8%;">
+                <img style="max-width: 80%;" menuClose (click)="logout()" src="assets/img/custom-images/logout.png">
+            </div>
+
+        </ion-list>
+
+        <!-- Logout img -->
+        <!-- <div style="position: absolute; bottom: 10px; width: 95%;padding-left: 30px">
+            <img style="max-width: 95%;" menuClose (click)="logout()" src="assets/img/custom-images/logout.png">
+        </div> -->
+
+    </ion-content>
+</ion-menu>

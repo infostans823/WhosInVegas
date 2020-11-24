@@ -1,0 +1,55 @@
+<!--
+  Generated template for the CurrentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="mainDiv">
+    <ion-scroll class="CurrentTripScroll" #currentScroll [scrollY]="searchInProgress ? false : true">
+        <!-- <ion-item no-lines class="im"> -->
+        <div class="sk-gradient-preloader" *ngIf="searchInProgress">
+        </div>
+
+        <ion-list scroll="true" *ngIf="currentTrip">
+            <ion-item *ngFor="let trip of currentTrip">
+                <div>
+                    <div class="TextColor">{{trip.first_day_trip  | date: 'dd MMM' }} -
+                        {{trip.last_day_trip | date: 'dd MMM yyyy'}} <b
+                            class="sk-days">{{parseDate(trip.first_day_trip,trip.last_day_trip)}} Days</b><img
+                            (click)="presentConfirm(trip.id)" class="sk-cancel"
+                            src="assets/img/custom-images/cancel.png"></div>
+                    <br />
+                    <!-- <div>
+                        <div class="TextColor" style="float: left;">{{trip.username}}</div>
+                    </div> -->
+                </div>
+            </ion-item>
+
+
+            <!-- ad -->
+            <!-- <iframe src="https://whosinvegas.com/rits_ads.php" width="320" height="50" scrolling="no" marginheight="0"
+                marginwidth="0" frameborder="0" allowfullscreen="allowfullscreen"
+                mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen"
+                oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"
+                data-gtm-yt-inspected-1_27="true">
+            </iframe> -->
+            
+        </ion-list>
+
+        <!-- <ion-title *ngIf="currentLength == 0">No trips</ion-title> -->
+        <div *ngIf="currentLength == 0" style="padding: 4% 8%;">
+            <h4>Oops!</h4>
+            <h6>You haven’t added any dates yet.</h6>
+            <div style="font-size: 1.5rem; color: gray; margin-top: 4%;">Want to meet people when you’re in Las Vegas?
+                Here you can add upcoming travel dates to your profile and we’ll match you with people who’ll be there
+                at the same time!</div>
+            <div style="font-size: 1.4rem; color: gray; margin-top: 10%;">Your profile and travel dates are secured
+                and under your control. If you're already enjoying yourself in Las Vegas, remove your trip here and you won't appear in the search results. Simple as that!</div>
+        </div>
+
+        <!-- </ion-item> -->
+        <!-- <ion-item no-lines class="im">
+            <iframe class="iframe" height="630px" width="100%" src="http://whosinvegas.com/includes/grid.inc"></iframe>
+        </ion-item> -->
+    </ion-scroll>
+</div>

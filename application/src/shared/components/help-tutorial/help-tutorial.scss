@@ -1,0 +1,89 @@
+page-help-tutorial {
+    .btn-cls {
+        color: white;
+        text-align: center;
+        margin-top: 5rem;
+        font-weight: bold;
+        background: #dd6784;
+        width: 85%!important;
+        margin-left: 8%!important;
+        margin-top: 15% !important;
+        height: 13% !important;
+        text-transform: uppercase;
+    }
+    .popup-div {
+        background: white;
+        border-radius: 20px;
+        margin-top: 15%;
+        height: 80%;
+    }
+    .img-bag {
+        width: 13%;
+        margin-left: 44%;
+        margin-top: 10%;
+    }
+    .trip-txt {
+        text-align: center;
+        font-size: 2.5em;
+        margin-top: 5%;
+    }
+    .txt-cls {
+        text-align: center;
+        color: black;
+        font-weight: bold;
+        margin-top: 3%;
+        font-size: 1.8rem;
+        // margin-top: 6rem;
+    }
+    .txt-no-thnk {
+        color: gray;
+        margin-top: 10%;
+        text-align: center;
+        font-weight: bold;
+    }
+    .txt-shall-we {
+        text-align: center;
+        color: gray;
+        margin-top: 6rem;
+        font-size: 2rem;
+    }
+    .info-div-scr1 {
+        background: transparent;
+    }
+    .info-close-click {
+        width: 30%;
+        right: 5%;
+        top: 3%;
+        position: absolute;
+    }
+    .content-trens {
+        // background: #0a0707a3 !important;
+        background: #0a0707a3 !important;
+    }
+    .info-img-top {
+        width: 70%;
+        margin-top: 15%;
+        margin-left: 3%;
+    }
+    .info-img-bottam {
+        width: 70%;
+        position: absolute;
+        left: 15%;
+        bottom: 18%;
+    }
+    .info-pro-bok {
+        width: 20%;
+        position: absolute;
+        margin-left: 1.9%;
+        top: 2%;
+    }
+    .info-div-scr2 {
+        background: transparent;
+    }
+    .info-scr2-tab {
+        position: absolute;
+        bottom: 3%;
+        left: 5%;
+        width: 90%;
+    }
+}

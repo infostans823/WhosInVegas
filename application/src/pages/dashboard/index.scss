@@ -1,0 +1,170 @@
+dashboard{
+    //////////////TABS CSS////////////////////
+
+    .sk-color-gray{
+        color: darkgray;
+    }
+    .sk-color-black{
+        color: black;
+    }
+    .sk-bottom-text-1{
+        font-size: 1.16rem;
+        position: absolute;
+        bottom: -22%;
+        left: 6.5%;
+        font-weight: bolder
+    }
+
+    .sk-bottom-text-2{
+        font-size: 1.16rem;
+        position: absolute;
+        bottom: -22%;
+        left: 32.6%;
+        font-weight: bolder
+    }
+
+    .sk-bottom-text-3{
+        font-size: 1.16rem;
+        position: absolute;
+        bottom: -22%;
+        right: 33.8%;
+        font-weight: bolder
+    }
+
+    .sk-bottom-text-4{
+        font-size: 1.16rem;
+        position: absolute;
+        bottom: -22%;
+        right: 8%;
+        font-weight: bolder
+    }
+
+    .sk-custom-tab{
+        text-align: center;
+        position: absolute;
+        bottom: 46%;
+        z-index: 10;
+    }
+
+    .sk-matches{
+        width: 90%;
+    }
+
+    .botton-1{
+        width: 15%;
+        position: absolute;
+        bottom: 14%;
+        z-index: 5;
+        left: 6%;
+    
+    }
+
+    .botton-2{
+        width: 15%;
+        position: absolute;
+        bottom: 14%;
+        z-index: 5;
+        left: 30%;
+    
+    }
+
+    .botton-3{
+        width: 15%;
+        position: absolute;
+        bottom: 14%;
+        z-index: 5;
+        right: 30%;
+    
+    }
+
+    .botton-4{
+        width: 15%;
+        position: absolute;
+        bottom: 14%;
+        z-index: 5;
+        right: 6%;
+    
+    }
+
+    ///////////////////////////////////////////
+    .sk-header-left{
+        display: inline-block;
+        position: absolute;
+        left: 6%;
+        top: 22%;
+        z-index: 2;
+    }
+
+    .sk-header-right{
+        display: inline-block;
+        position: absolute;
+        right: -5%;
+        top: 28%;
+    }
+
+    .sk-header-profile{
+        width: 14%;
+        display: inline-block;
+    }
+
+    .sk-header-conversations{
+        width: 17%;
+        display: inline-block;
+        margin-left: 10%;
+    }
+
+    .sk-header-menu{
+        width: 28%;
+        display: inline-block;
+        margin-left: 36%;
+    }
+
+    .toolbar-title {
+        text-align: center;
+    }
+
+    .sk-toolbar-bg-profile{
+        border-color: transparent;
+        background-image: url("../assets/img/custom-images/toolbar_bg.png");
+        background-size: cover;
+        background-position: center;
+        margin: auto;
+    }
+
+    .sk-toolbar-bg-message{
+        border-color: transparent;
+        background-color: #FFF;
+    }
+
+    .toolbar-background {
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+   .sk-dashboard-toolbar {
+        min-height: 72px;
+        box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.6);
+        z-index: 0;
+    }
+
+}
+
+.header .sk-dashboard-toolbar {
+    align-items: flex-start;
+    padding: 0;
+}
+
+.sk-dashboard-page {
+    z-index: 0;
+    .sk-components-slider-wrapper {
+        width: 100%;
+
+        .swiper-slide {
+            align-items: flex-start;
+
+            &>.slide-zoom {
+                height: $sk-height-100;
+            }
+        }
+    }
+}

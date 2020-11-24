@@ -1,0 +1,393 @@
+login {
+
+    .sk-login-page {
+        background-image: url("../assets/img/custom-images/bg_login.png");
+        background-size: cover;
+        background-position: center;
+        margin: auto;
+        z-index: 2;
+        //background-color: #6B40B4;
+    }
+
+    .sk-signup-page {
+        background-image: url("../assets/img/custom-images/bg_signup.png");
+        background-size: cover;
+        background-position: center;
+        margin: auto;
+        z-index: 2;
+        //background-color: #23273C;
+    }
+
+    // .input:-webkit-autofill {
+    //     -webkit-box-shadow: 0 0 0 1000px green inset !important;
+    //     box-shadow: inset 0 0 0 1000px green !important;
+    // }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-text-fill-color: white !important;
+    }
+
+    .sk-question-error,
+    .sk-base-question-presentation .sk-question-pending {
+        top: 51% !important;
+    }
+
+    .label-md {
+        font-family: 'segoeui';
+    }
+
+    .label-ios {
+        font-family: 'segoeui';
+    }
+
+    .button-md {
+        border-radius: 50px !important;
+        font-family: 'segoeui';
+    }
+
+    .button-ios {
+        border-radius: 50px !important;
+        font-family: 'segoeui';
+    }
+
+    .item-input ion-input,
+    .item-input ion-textarea {
+        font-family: 'segoeui';
+    }
+
+    .sk-logo {
+        width: 68%;
+        position: absolute;
+        left: 16%;
+        top: 10%;
+    }
+
+    .botm-txt {
+        color: white;
+        white-space: initial;
+        margin-top: 8%;
+    }
+
+    .center {
+        margin-top: 0rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .devider {
+        height: 3px;
+        background-color: white;
+        max-width: 100%;
+        position: relative;
+        margin: 0.5rem 4rem 0rem 4rem;
+    }
+
+    .header-login {
+        height: 32%;
+        max-width: 100%;
+    }
+
+    .header-signup {
+        height: 32%;
+        max-width: 100%;
+    }
+
+    .sk-bg-login {
+        background-image: url("../assets/img/custom-images/login_half_cut.png");
+        padding-top: 12%;
+        padding-bottom: 40%;
+    }
+
+    .sk-bg-signup {
+        background-image: url("../assets/img/custom-images/signup_half_cut.png");
+        padding-top: 12%;
+        padding-bottom: 37.5%;
+    }
+
+    .sk-bg-login-patch {
+        bottom: 0;
+        position: absolute;
+    }
+
+    .sk-bg-signup-patch {
+        bottom: 0;
+        position: absolute;
+    }
+
+    .segment-md .segment-button {
+        padding: 0px 0px !important;
+        border-bottom-width: 0px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(255, 255, 255, 1);
+        font-size: 1.5rem;
+    }
+
+    .custom-tab1 {
+        max-width: 5.5rem;
+    }
+
+    // .custom-tab2{
+    //     .segment-md .segment-button {
+
+    //     }
+    // }
+
+    .btn-facebook {
+        font-size: 1.4rem;
+        padding: 2.5rem 0rem !important;
+        background-color: #4267B3;
+        font-weight: normal;
+    }
+
+    .segment-button {
+        text-align: left;
+        color: white !important;
+    }
+
+    .sk-login-page-cont form .list ion-item {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+    }
+
+    .sk-login-page-cont form {
+        width: 80%;
+    }
+
+    .sk-login-page-cont form .sk-buttons-inline button {
+        color: #fff;
+    }
+
+    .sk-login-page-cont form .list .sk-name .item {
+        margin-bottom: 1rem;
+    }
+
+    .sk-login-page-cont form .list ion-item {
+        margin-bottom: 1rem;
+    }
+
+    .sk-login-page-cont form .list {
+        margin-bottom: 0.5rem;
+    }
+
+    .sk-login-page-cont form .sk-buttons button.sk-login {
+        background-color: #142C71;
+    }
+
+    .sk-login-page-cont form .sk-buttons button {
+        max-width: 100%;
+        min-width: 0;
+        margin: 1rem 0rem;
+    }
+
+    .sk-login-page-cont form .list ion-item .item-inner input {
+        color: white;
+        font-family: 'segoeui';
+    }
+}
+
+.sk-login-page {
+    //background-image: url("../assets/img/custom-images/index.jpg");
+    background-size: cover;
+    background-position: center top;
+
+    &-cont {
+        @include flex(flex, column, flex-start, center);
+        height: calc(100% - 3rem);
+        margin-top: 3rem;
+
+        .sk-logo-wrap {
+            flex-grow: 2;
+            padding: 2rem;
+            @include flex(flex, row, center, center);
+            margin-bottom: 1rem;
+
+            img {
+                width: $sk-login-logo-width;
+                height: $sk-login-logo-height;
+            }
+
+        }
+
+        form {
+            flex-grow: 2;
+            @include flex(flex, column, flex-start, stretch);
+            width: 70%;
+
+            .list {
+                margin-bottom: 2rem;
+
+                .sk-name {
+                    .item {
+                        margin-bottom: 2rem;
+
+                        .item-inner {
+                            background-image: url("../assets/img/custom-images/ic-login-name.svg");
+                        }
+                    }
+                }
+
+                .sk-password {
+                    .item-inner {
+                        background-image: url("../assets/img/custom-images/ic-login-pass.svg");
+                    }
+                }
+
+                ion-item {
+                    background-color: $sk-login-input-bg;
+                    border-radius: 4px;
+
+                    &.item-input:last-child {
+                        border: none;
+                    }
+
+                    .item-inner {
+                        border: 0;
+                        background-repeat: no-repeat;
+                        background-size: auto 2.4rem;
+                        @include background-position(start, center);
+                        @include padding (null, null, null, 29px);
+
+                        input {
+                            font-size: 1.6rem;
+                            color: $sk-login-input-fcolor;
+                            @include placeholder ($sk-login-input-placeholder);
+                        }
+                    }
+                }
+            }
+
+            .sk-buttons {
+                @include flex(flex, column, flex-start, stretch);
+                flex-grow: 1;
+
+                button {
+                    margin-bottom: 2rem;
+                    max-width: 100%;
+                    min-width: 0;
+
+                    &.sk-login {
+                        background-color: $sk-login-inline-signin;
+                        margin-bottom: 1.5rem;
+                        margin-top: 0;
+                    }
+                }
+
+                &-inline {
+                    @include flex(flex, column, space-between, stretch);
+
+                    button {
+                        height: 1.4em;
+                        font-size: 1.4rem;
+                        padding: 0;
+                        color: $sk-login-inline-btn-color;
+
+                        &.sk-signup {
+                            color: $sk-login-inline-signup;
+                        }
+                    }
+                }
+
+                .sk-facebook-wrap {
+                    text-align: center;
+                    margin-top: auto;
+
+                    .sk-facebook-label {
+                        overflow: hidden;
+                        color: $sk-login-fb-label-color;
+                        font-size: 1.2rem;
+                        text-transform: uppercase;
+
+                        &:after,
+                        &:before {
+                            background-color: $sk-login-fb-border-color;
+                            content: "";
+                            display: inline-block;
+                            height: 1px;
+                            position: relative;
+                            vertical-align: middle;
+                            width: 50%;
+                            @include position(null, null, null, 0.5rem);
+                            @include margin(null, -50%, null, null)
+                        }
+
+                        &:before {
+                            @include position(null, 0.5rem, null, auto);
+                            @include margin(null, 0, null, -50%)
+                        }
+                    }
+
+                    .sk-facebook {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        width: 4.7rem;
+                        height: 4.7rem;
+                        min-width: 0;
+                        background: url("../assets/img/custom-images/ic-fb.svg");
+
+                        &-button-wrap {
+                            padding-top: 1.5rem;
+                            @include flex(flex, row, center, center);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sk-login-url {
+    button {
+        color: $sk-login-url-color;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .sk-login-page {
+        .sk-login-page-cont {
+            height: auto;
+
+            .sk-logo-wrap {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .sk-login-page .sk-login-page-cont form .sk-buttons {
+        min-height: 200px;
+
+        .sk-login {
+            margin-bottom: 2vh;
+        }
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and (min--moz-device-pixel-ratio: 1.25),
+only screen and (-o-min-device-pixel-ratio: 1.25/1),
+only screen and (min-device-pixel-ratio: 1.25),
+only screen and (min-resolution: 200dpi),
+only screen and (min-resolution: 1.25dppx) {
+    .sk-login-page {
+        background-image: url("../assets/img/custom-images/bg_login.png");
+        background-size: cover;
+        background-position: center;
+        margin: auto;
+        z-index: 2;
+        //background-color: #6B40B4;
+    }
+
+    .sk-signup-page {
+        background-image: url("../assets/img/custom-images/bg_signup.png");
+        background-size: cover;
+        background-position: center;
+        margin: auto;
+        z-index: 2;
+        //background-color: #23273C;
+    }
+}

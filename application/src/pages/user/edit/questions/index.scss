@@ -1,0 +1,359 @@
+edit-user-questions
+{
+
+    .sk-iframe{
+        top: 0.4rem;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+    ////////////////////Questions CSS///////////////////
+
+    .list-md .item-block .item-inner {
+        border-bottom: 0
+    }
+    .list-ios .item-block .item-inner {
+        border-bottom: 0
+    }
+
+    .sk-open5{
+        z-index: 0;
+    }
+
+    .sk-close5{
+        z-index: -1;
+    }
+
+    .sk-base-question-presentation .sk-range-question-presentation .range .range-bar-active {
+        background-color: #54C6D0;
+    }
+    .sk-base-question-presentation .sk-range-question-presentation .range .range-knob {
+        background-color: #DD6784;
+    }
+    .sk-base-question-presentation .sk-question-error, .sk-base-question-presentation .sk-question-pending {
+        top: 66% !important;
+    }
+
+    ion-label{
+        font-weight: 600;
+        font-size: 1.2rem !important;
+        text-transform: uppercase;
+        color: #AD99C6 !important;
+        //font-family: "assets/fonts/segoeui.ttf";
+    }
+
+    .text-input-md {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        color: #5B348D;
+        font-size: 1.5rem;
+        font-weight: 600;
+        //font-family: "assets/fonts/segoeui.ttf";
+    }
+    .text-input-ios {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        color: #5B348D;
+        font-size: 1.5rem;
+        font-weight: 600;
+        //font-family: "assets/fonts/segoeui.ttf";
+    }
+
+    .select-md{
+        margin: 2% 0% !important;
+        padding: 4% 3% !important;
+        border-radius: 2px !important;
+    }
+    .select-ios{
+        margin: 2% 0% !important;
+        padding: 4% 3% !important;
+        border-radius: 2px !important;
+    }
+
+    .select {
+        max-width: 98% !important;
+        color: #5B348D;
+        font-size: 1.5rem;
+        font-weight: 600;
+        height: 46px;
+        background-color:rgba(231,232,234,0.8);
+    }
+
+    .sk-base-question-presentation .sk-range-question-presentation .label .sk-range-value {
+        color: #5B348D;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .sk-base-question-presentation .sk-date-question-presentation .datetime {
+        color: #5B348D;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 2%;
+        background-color: rgba(231,232,234,0.8);
+        padding: 4% 3%;
+        width: 100%;
+    }
+
+    ion-item{
+        //background-color:rgba(231,232,234,0.8) !important;
+        padding-top: 1.2rem !important;
+        margin: 1rem 0rem 2rem 0rem !important;
+        border-radius: 4px;
+    }
+
+    .item-md {
+        padding-left: 0 !important;
+    }
+    .item-ios {
+        padding-left: 0 !important;
+    }
+
+    .item-input ion-input, .item-input ion-textarea {
+        position: static;
+        background-color: rgba(231,232,234,0.8);
+        padding: 0% 4%;
+        border-radius: 2px;
+        margin-top: 2%;
+    }
+
+    .item-md.item-block .item-inner {
+        border-bottom: 0px solid #D8D8D8;
+    }
+
+    ////////////////////////////////////////
+    .sk-photo-pending, .sk-photo-processing {
+        //background-color: rgba(255, 255, 255, 0.7);
+        background-color: transparent;
+   }
+
+   .sk-user-edit-base .sk-avatar-mask, .sk-user-edit-base .sk-photo-pending {
+        left: 0;
+        z-index: 0;
+    }
+   
+    .toolbar-background-md {
+        background: transparent;
+    }
+    
+    .toolbar-background-ios {
+        background: transparent;
+    }
+
+    .sk-title{
+        text-align: center;
+    }
+
+    .toolbar-title-md {
+        color: #FFF;
+    }
+    .toolbar-title-ios {
+        color: #FFF;
+    }
+
+    .button-inner {
+        color: #fff;
+    }
+
+    .back-button-md {
+        margin: 0 0 !important;
+    }
+
+    .back-button-text {
+        margin-left: 2%;
+        margin-top: 2px;
+    }
+
+     ///////////////TABS CSS////////////////
+
+     .sk-tab-1{
+        max-width: 8rem;
+        padding-left: 4% !important;
+      }
+
+      .sk-tab-2{
+        max-width: 12.5rem;
+        padding-left: 1% !important;
+      }
+  
+      .segment-md .segment-button {
+        text-align: left;
+        border-color: white !important;
+        border-bottom-color: rgba(255, 255, 255, 1);
+      }
+
+      .range {
+        padding: 0 18px 0px 10px !important;
+    }
+  
+      .label-md {
+         margin: 0 !important; 
+      }
+      .label-ios {
+        margin: 0 !important; 
+      }
+  
+      .sk-tab-select{
+        color: black !important;
+        font-weight: bolder;
+        text-transform: none;
+        font-size: 2rem !important;
+      }
+  
+      .sk-tab-unselect{
+        color: grey !important;
+        font-weight: bolder;
+        text-transform: none;
+        font-size: 2rem !important;
+      }
+  
+      ion-segment{
+        margin-top: 2%;
+        margin-bottom: -4%;
+      }
+
+    //////////////////////////////
+
+    .sk-user-new {
+        position: absolute;
+        top: 16%;
+        left: 26%;
+        z-index: 5;
+    
+        .sk-user-avatar-new {
+            @include flex(flex, row, center, stretch);
+            width: 18rem;
+            border-radius: $button-round-border-radius;
+            overflow: hidden;
+    
+            .sk-user-avatar-new-img  {
+                // position: relative;
+                // width: 60%;
+                // height: 60%;
+                user-avatar {
+                    display: block;
+                    width: 100%;
+                    height: 100%;    
+                    padding: 10px;
+                    background: transparent;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        vertical-align: top;
+                        border: solid 4.5px white;
+                        box-shadow: 1px 2px 8px rgba(0, 0, 0, .5);
+                    }
+                }
+    
+                .sk-photo-pending {
+                    top: 0;
+                    img {
+                        width: 10vh;
+                        height: 10vh;
+                    }
+                }          
+            }
+    
+        }
+    }
+    
+    .sk-user-info-new {
+        @include flex(flex, column, center, center);
+        padding: 1vh 2rem;
+        margin-top: 1rem;
+    
+        span {
+            max-width: 80%;
+            @include text-overflow;
+        }
+    
+        .sk-name-new {
+            color: $sk-profile-tab-name;
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+    
+        .sk-about {
+            font-size: 1.8rem;
+            color: $sk-profile-tab-about;
+        }
+    }
+}
+
+.sk-user-edit-base {
+    //background-color: color($colors, sk-page-bg);
+
+    ion-grid {
+        padding: 0.5rem;
+    }
+
+    .sk-avatar-mask, .sk-photo-pending {
+        @include flex(flex, row, center, center);
+        position: absolute;
+        @include position(0, null, null, 0);
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+    }
+
+    .sk-avatar-mask {
+        background-image: url("../assets/img/edit/ic-avatar-mask.svg");
+        background-size: cover;
+        opacity: 0.6;
+        z-index: 4;
+    }
+
+    .sk-photo-pending {
+        z-index: 5;
+
+        img {
+            width: 12vw;
+            height: 12vw;
+        }
+    }
+
+    .sk-photo-grid-item {
+        position: relative;
+        height: calc(((100vw - 10px) / 3) - 12px);
+        margin: 6px;
+        padding: 0;
+        border-radius: 16px;
+        background-image: url("../assets/img/custom-images/placeholder.png");
+        background-size: cover;
+        background-position: center;
+        //background: $sk-edit-photo-grid no-repeat center center;
+        touch-action: auto!important;
+        user-select: auto!important;
+        -webkit-user-drag: auto!important;
+        background-size: cover;
+
+        user-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 16px;
+            }
+        }
+       
+        .icon {
+            @include flex(flex, row, center, center);
+            width: 100%;
+            height: 100%;
+            font-size: 6rem;
+            color: $sk-edit-photo-more;
+        }
+    }
+}
+

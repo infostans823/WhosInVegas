@@ -1,0 +1,54 @@
+<!--
+  Generated template for the HelpTutorialPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="content-trens" padding>
+
+
+    <div class="popup-div" *ngIf="isPopupForShowInfo">
+
+        <img class="img-bag" src="assets/img/custom-images/vagas_logo.png">
+
+        <div class="trip-txt">Welcome!</div>
+
+        <div class="txt-cls">{{userName}}</div>
+
+        <div class="txt-shall-we">Shall we show you around?</div>
+        <div ion-button round class="btn-cls" (click)="showInfoTip()">Show Help Tips</div>
+        <div class="txt-no-thnk" (click)="cancle()">No Thanks</div>
+
+    </div>
+
+
+
+    <div class="info-div-scr1" *ngIf="isInfoTipScr1">
+
+        <img class="info-pro-bok" (click)="infoClick()" src="assets/img/custom-images/profile_.png">
+        <img class="info-close-click" (click)="cancle()" src="assets/img/custom-images/close-btn-img.png">
+        <img class="info-img-top" (click)="infoClick()" src="assets/img/custom-images/swich_log.png">
+        <img class="info-img-bottam" (click)="infoClick()" src="assets/img/custom-images/the_main_activities.png">
+    </div>
+
+
+    <div class="info-div-scr2" *ngIf="isInfoTipScr2">
+
+        <!-- <img class="info-pro-bok" (click)="cancle()" src="assets/img/custom-images/profile_.png"> -->
+        <img class="info-close-click" (click)="cancle()" src="assets/img/custom-images/close-btn-img.png">
+        <img class="info-img-top" (click)="testScr3()" src="assets/img/custom-images/swich_between.png">
+        <img class="info-img-bottam" (click)="testScr3()" src="assets/img/custom-images/the_main_activities_pink.png">
+        <img class="info-scr2-tab" (click)="testScr3()" src="assets/img/custom-images/tab_.png">
+        <!-- (click)="cancle()" -->
+    </div>
+
+
+    <div class="info-div-scr2" *ngIf="isInfoTipScr3">
+
+        <!-- <img class="info-pro-bok" (click)="cancle()" src="assets/img/custom-images/profile_.png"> -->
+        <img class="info-close-click" (click)="cancle()" src="assets/img/custom-images/close-btn-img.png">
+        <img class="info-img-top" (click)="cancle()" src="assets/img/custom-images/swich_between.png">
+        <!-- <img class="info-img-bottam" (click)="cancle()" src="assets/img/custom-images/the_main_activities_pink.png">
+        <img class="info-scr2-tab" (click)="cancle()" src="assets/img/custom-images/tab_.png"> -->
+    </div>
+</ion-content>
