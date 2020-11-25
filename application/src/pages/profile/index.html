@@ -56,20 +56,20 @@
             <ion-slides #photosSlider (ionSlideDidChange)="trackViewedPhotos()" [dir]="application.getLanguageDirection()" [pager]="true" [paginationType]="bullets" class="profile-slider">
                 <!-- avatar -->
                 <ion-slide>
-                    <user-avatar 
-                        *ngIf="!isProfileOwner" 
-                        isUseBigAvatar="true" 
-                        [url]="userData.avatar?.bigUrl" 
-                        [isAvatarActive]="userData.avatar?.active" 
-                        (tap)="userData.avatar?.bigUrl ? viewPhotos(userData.avatar?.bigUrl) : ''" 
-                        (press)="showProfileActions()">
+                    <user-avatar
+                            *ngIf="!isProfileOwner"
+                            isUseBigAvatar="true"
+                            [url]="userData.avatar?.bigUrl"
+                            [isAvatarActive]="userData.avatar?.active"
+                            (tap)="userData.avatar?.bigUrl ? viewPhotos(userData.avatar?.bigUrl) : ''"
+                            (press)="showProfileActions()">
                     </user-avatar>
-                    <user-avatar 
-                        *ngIf="isProfileOwner" 
-                        isUseBigAvatar="true" 
-                        [url]="userData.avatar?.pendingBigUrl" 
-                        (tap)="userData.avatar?.pendingBigUrl ? viewPhotos(userData.avatar?.pendingBigUrl) : ''" 
-                        (press)="showProfileActions()">
+                    <user-avatar
+                            *ngIf="isProfileOwner"
+                            isUseBigAvatar="true"
+                            [url]="userData.avatar?.pendingBigUrl"
+                            (tap)="userData.avatar?.pendingBigUrl ? viewPhotos(userData.avatar?.pendingBigUrl) : ''"
+                            (press)="showProfileActions()">
                     </user-avatar>
                     <div *ngIf="isProfileOwner && userData.avatar?.id && !userData.avatar?.active" class="sk-photo-pending" (tap)="userData.avatar?.pendingBigUrl ? viewPhotos(userData.avatar?.pendingBigUrl) : ''" (press)="showProfileActions()">
                         <img src="./assets/img/ic-pending.svg" alt="" />
@@ -96,10 +96,10 @@
                 <!-- photos -->
                 <ng-container *ngIf="isViewPhotoAllowed">
                     <ion-slide *ngFor="let photo of firstUserPhotos; let i = index">
-                        <user-image 
-                            [url]="photo.bigUrl" 
-                            (tap)="viewPhotos(photo.bigUrl)" 
-                            (press)="showPhotoActions(photo.id)">
+                        <user-image
+                                [url]="photo.bigUrl"
+                                (tap)="viewPhotos(photo.bigUrl)"
+                                (press)="showPhotoActions(photo.id)">
                         </user-image>
                         <div *ngIf="isProfileOwner && !photo.approved" class="sk-photo-pending" (tap)="viewPhotos(photo.bigUrl)" (press)="showPhotoActions(photo.id)">
                             <img src="./assets/img/ic-pending.svg" alt="" />
@@ -124,10 +124,12 @@
         </div>
 
         <div class="sk-name">
-            <b>{{ userData.user.userName }}</b>
-            <b *ngIf="userData.user.age">, {{ userData.user.age }}</b>
-            <div style="display: inline-block; color: #A9A9B1;" *ngIf="!isProfileOwner" class="sk-more" (click)="showProfileActions()">
-                <ion-icon style="margin-left: 0.5rem; font-weight: bold;" name="ios-more"></ion-icon>
+            <div class="sk-name-wrap">
+                <b>{{ userData.user.userName }}</b>
+                <b *ngIf="userData.user.age">, {{ userData.user.age }}</b>
+                <div *ngIf="!isProfileOwner" class="sk-more" (click)="showProfileActions()">
+                    <ion-icon name="ios-more"></ion-icon>
+                </div>
             </div>
         </div>
 
@@ -149,11 +151,11 @@
         </div>
 
         <!-- base profile info -->
-        <div margin-start class="{{ userData.user.isOnline && !isProfileOwner ? 'sk-profile-top sk-user-online' : 'sk-profile-top' }}">
-            <div style="display: inline-block; vertical-align: top;" class="sk-profile-section">
-                <p *ngIf="!isProfileOwner" class="sk-section-text2">
+        <div class="{{ userData.user.isOnline && !isProfileOwner ? 'sk-profile-top sk-user-online' : 'sk-profile-top' }}">
+            <div class="sk-profile-section">
+                <div *ngIf="!isProfileOwner" class="sk-section-text2">
                     <location [distance]="userData.user?.distance?.distance" [unit]="userData.user?.distance?.unit"></location>
-                </p>
+                </div>
             </div>
         </div>
 
